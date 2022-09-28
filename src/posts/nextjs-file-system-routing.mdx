@@ -1,0 +1,125 @@
+---
+title: NextJs File System Routing
+createDate: "2021/09/28"
+description: NextJs File System Routing
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+# NextJs File System Routing
+
+## 1. Overview
+
+![NextJs File System Routing](https://global.discourse-cdn.com/meteor/optimized/3X/3/e/3e397f076eef91c6df1fca2dd16ee1952c21543b_2_689x318.jpeg)
+
+Add routings with react-router-dom in ReactJS
+
+<SyntaxHighlighter language="javascript">
+  {`
+    function App() {
+        // ...
+        return (
+            <Switch>
+                <Route exact path="/" component={HomePage} />
+                <Route path="/login" component={LoginPage} />
+                <Route path="/products" component={ProductFeature} />
+                <Route component={NotFound} />
+            </Switch>
+        )
+    }
+  `}
+</SyntaxHighlighter>
+
+But in **NextJS**, we use **File-system Routing**, what does it means?
+
+- When a file is **added to the pages directory** it's automatically available as a route.
+- There are three kind of routes
+  - **Index routes**: file named index
+  - **Nested routes**: nested folder in pages
+  - **Dynamic routes**: brackets in file name to match parameter dynamically
+
+## 2. Dynamic Routes
+
+We can use dynamic routes (bracket syntax) to support path parameters.
+
+<BlogTable
+  headers={["Name", "File Path"]}
+  rows={[
+    ["1. Single parameter", "pages/posts/[postId].tsx"],
+    ["2. Multiple parameters", "pages/categories/[categoryId]/posts/[postId].tsx"],
+    ["3. Catch all routes", "pages/posts/[...slug].tsx"],
+    ["4. Optional catch all routes", "pages/posts/[postId].tsx"]
+  ]}
+></BlogTable>
+<br />
+
+**Single parameter:** pages/posts/[postId].tsx will match:
+
+<BlogTable
+  headers={["URL", "router.query"]}
+  rows={[
+    ["1. /posts/123", "{ postId: '123' }"],
+    ["2. /posts/developer-tips", "{ postId: 'developer-tips' }"],
+    ["3. /posts/developer-roadmap", "{ postId: 'developer-roadmap' }"],
+  ]}
+></BlogTable>
+
+but it won't match **/posts/developer-roadmap/something-else**
+
+<br />
+
+**Multiple parameters:** pages/categories/[categoryId]/posts/[postId].tsx will match:
+
+<BlogTable
+  headers={["URL", "router.query"]}
+  rows={[
+    ["1. /categories/123/posts/456", "{ categoryId: '123', postId: '456' }"],
+    ["2. /categories/frontend/posts/js", "{ categoryId: 'frontend', postId: 'js' }"],
+  ]}
+></BlogTable>
+
+```
+    pages
+    |__ categories
+    | |__ [categoryId] (folder)
+    | |__ posts
+    | |__ [postId].tsx (file)
+```
+
+<br />
+**Catch all routes:** pages/posts/[...slug].tsx will match:
+
+<BlogTable
+  headers={["URL", "router.query"]}
+  rows={[
+    ["1. /posts/123", "{ slug: ['123'] }"],
+    ["2. /posts/easy-nextjs", "{ slug: ['easy-nextjs'] }"],
+    ["3. /posts/easy/frontend", "{ slug: ['easy', 'frontend'] }"],
+    ["4. /posts/easy/frontend/nextjs", "{ slug: ['easy', 'frontend', 'nextjs'] }"]
+  ]}
+></BlogTable>
+but it won't match **/posts**
+
+<br />
+**Optional catch all routes:** pages/posts/[[...slug]].tsx will match:
+Same to **Catch all routes** but it also match **/posts**
+
+## 3. Route match order
+<BlogTable
+  headers={["Name", "File Path", "Priority"]}
+  rows={[
+    ["Pre-defined routes", "pages/posts/create.tsx", "1"],
+    ["Dynamic routes", "pages/posts/[postId].tsx", "2"],
+    ["Catch all routes", "pages/posts/[...slug].tsx", "3"],
+  ]}
+></BlogTable>
+
+<br />
+
+### Reference
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />
