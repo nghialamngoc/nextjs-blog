@@ -1,0 +1,152 @@
+---
+title: NextJs Navigation
+createDate: "2021/10/01"
+description: NextJs Navigation Between Pages
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+# NextJs Navigation Between Pages
+
+## Agenda
+
+1. Navigate between pages with next/link
+2. Navigate to a page programmatically using router.push()
+3. How prefetching works
+
+## 1. Navigate between pages with next/link
+
+```
+  pages
+  |__ index.tsx (HomePage)
+  |__ about.tsx
+```
+
+```
+  import Link from 'next/link'
+
+  function HomePage() {
+    return (
+      <Link href="/about">
+      <a>About Us</a>
+      </Link>
+    )
+  }
+```
+< **Link** > props
+
+<BlogTable
+  headers={["#", "Name", "Default", "Description"]}
+  rows={[
+    ["1", "href", "", "REQUIRED. the path or URL to navigate to."],
+    ["2", "passHref", "false", "Forces Link to send the href property to its child"],
+    ["3", "prefetch", "true", "Prefetch the page in the background"],
+    ["4", "replace", "false", "Replace the current history state instead of adding a new url into the stack"],
+    ["5", "scroll", "true", "Scroll to the top of the page after a navigation"],
+  ]}
+></BlogTable>
+
+> next/link docs: [https://nextjs.org/docs/api-reference/next/link](https://nextjs.org/docs/api-reference/next/link).
+
+## 2. Navigate to a page programmatically using router.push()
+
+<SyntaxHighlighter language="javascript">
+{`
+  import { useRouter } from 'next/router'
+
+  function App() {
+    const router = useRouter();
+
+    function handleSubmit() {
+      router.push('/success-page');
+
+      // or using options object
+      router.push({
+        pathname: '/posts/[postId]',
+        query: {
+        postId: 123,
+        ref: 'social',
+        },
+      })
+    }
+
+    return (...);
+  }
+
+`}
+</SyntaxHighlighter>
+
+<BlogTable
+  headers={["#", "Name", "Description"]}
+  rows={[
+    ["1", "pathname", "Current route"],
+    ["2", "query", "The query string parsed to an object"],
+    ["3", "basePath", "The active basePath (if enabled)"],
+    ["4", "locale", "The active locale (if enabled)"],
+    ["5", "isFallback", "Whether the current page is in fallback mode"],
+  ]}
+></BlogTable>
+
+<br />
+
+**Router methods**
+
+<BlogTable
+  headers={["#", "Name", "Description"]}
+  rows={[
+    ["1", "router.push()", "Handles client-side transitions"],
+    ["2", "router.replace()", "prevent adding a new URL entry into the history stack"],
+    ["3", "router.prefetch()", "Prefetch pages for faster client-side transitions"],
+    ["4", "router.back()", "Navigate back in history"],
+    ["5", "router.reload()", "executes window.location.reload()"],
+  ]}
+></BlogTable>
+
+> next/link docs: [https://nextjs.org/docs/api-reference/next/router](https://nextjs.org/docs/api-reference/next/router).
+
+## 3. How prefetching works
+
+Prefetch the page in the background for faster client-side transitions (by default Link will have prefetch
+turned ON)
+
+<SyntaxHighlighter language="javascript">
+{`
+  function App() {
+    return (
+      <Link href="/pineapple-pizza">
+        <a>Pineapple pizza</a>
+      </Link>
+    )
+  }
+
+`}
+</SyntaxHighlighter>
+
+- Only prefetches links that appear in the viewport.
+- It use Intersection Observer API to detect.
+- Prefetching is only enabled in production.
+- But it will be disabled in slow network or when users have Save-Data turned on.
+
+**Avoid unnecessary prefetching**
+
+<SyntaxHighlighter language="javascript">
+{`
+  function App() {
+    return (
+      <Link href="/pineapple-pizza" prefetch={false}>
+        <a>Pineapple pizza</a>
+      </Link>
+    )
+  }
+
+`}
+</SyntaxHighlighter>
+
+### Reference
+
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />

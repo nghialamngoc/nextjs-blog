@@ -30,12 +30,19 @@ pre {
   font-size: 16px;
 }
 
-@media (prefers-color-scheme: dark) {
-  html {
-    color-scheme: dark;
-  }
-  body {
-    color: white;
-    background: black;
-  }
+blockquote {
+  margin: 14px 0;
+  padding-left: 10px;
+  border-left: 6px solid #78b5de;
+  display: flex;
+  align-items: center;
+  line-height: 1rem;
+}
+
+a {
+  color: #0000ee;
+}
+
+img {
+  width: 100%;
 }

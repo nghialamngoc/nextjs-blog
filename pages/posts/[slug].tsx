@@ -4,16 +4,12 @@ import { GetStaticPaths, GetStaticProps, GetStaticPropsContext } from "next";
 import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
-import SyntaxHighlighter from "react-syntax-highlighter";
-import Button from "../../src/components/Button";
-import BlogTable from "../../src/components/BlogTable";
+import MDXComponents from "../../src/components/MDXComponents";
 
 import { IPost } from "../../src/interfaces/post";
 import { Container } from "../../styles/Post.styled";
 
 const slugs = ["functions-for-beginners", "solidjs-for-beginners"];
-
-const components = { Button, BlogTable, SyntaxHighlighter };
 
 export interface IPostProps {
   post: IPost;
@@ -25,7 +21,7 @@ export default function Post({ post, mdxSource }: IPostProps) {
     <Container>
       <div>Post Page</div>
       <div>{post.title}</div>
-      <MDXRemote {...mdxSource} components={components}></MDXRemote>
+      <MDXRemote {...mdxSource} components={MDXComponents}></MDXRemote>
     </Container>
   );
 }

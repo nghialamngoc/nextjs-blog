@@ -1,0 +1,77 @@
+---
+title: NextJs CSR, SSG, SSG and ISR
+createDate: "2021/10/01"
+description: NextJs CSR, SSG, SSG and ISR
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+#NextJs CSR, SSG, SSG and ISR
+
+## Agenda
+
+1. [Pre-rendering](#pre-rendering)
+2. [SSG - Static Site Generation](#ssg-static-site-generation)
+3. [SSR - Server Side Rendering](#ssr-server-side-rendering)
+4. [CSR - Client Side Rendering](#csr-client-side-rendering)
+5. [ISR - Incremental Static Regeneration](#isr-incremental-static-regeneration)
+
+<H2 id="pre-rendering">1. Pre-rendering</H2>
+
+Two forms of pre-rendering:
+
+- SSG - Static Site Generation
+- SSR - Server Side Rendering
+
+Pre-rendering (Using Next.js)
+
+![NextJs Pre-rendered](https://nextjs.org/static/images/learn/data-fetching/pre-rendering.png)
+
+![No Pre-rendered](https://nextjs.org/static/images/learn/data-fetching/no-pre-rendering.png)
+
+<H2 id="ssg-static-site-generation">2. SSG - Static Site Generation</H2>
+
+The HTML is generated at the **build-time** and is reused for each request
+
+![Static Generation](https://nextjs.org/static/images/learn/data-fetching/static-generation.png)
+
+<H2 id="ssr-server-side-rendering">3. SSR - Server Side Rendering</H2>
+
+The HTML is generated on **each request**
+
+![Server Side Rendering](https://nextjs.org/static/images/learn/data-fetching/server-side-rendering.png)
+
+<H2 id="csr-client-side-rendering">4. CSR - Client Side Rendering</H2>
+
+![Client Side Rendering](https://nextjs.org/static/images/learn/data-fetching/client-side-rendering.png)
+
+<H2 id="isr-incremental-static-regeneration">5. ISR - Incremental Static Regeneration</H2>
+
+![Incremental Static Regeneration](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/14bd554d-ea02-49d9-8077-7b94f8ba69ad/generation-regeneration-nextjs.png)
+
+![Incremental Static Regeneration](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/a9d6ec1f-b714-4102-b845-0986bfc65417/regeneration-regeneration-nextjs.png)
+
+Good news! Pre-rendering form is per-page basis
+
+![Per page basis](https://nextjs.org/static/images/learn/data-fetching/per-page-basis.png)
+
+<BlogTable
+  headers={["#", "Name", "Description"]}
+  rows={[
+    ["1", "Static", "automatically rendered as static HTML (uses no initial props)"],
+    ["2", "SSG", "automatically generated as static HTML + JSON (uses getStaticProps)"],
+    ["3", "ISR", "incremental static regeneration (uses revalidate in getStaticProps)"],
+    ["4", "SSG + CSR", "pre-rendered HTML + data fetching on client side using useEffect"],
+    ["5", "SSR", "server-side renders at runtime (uses getInitialProps or getServerSideProps)"],
+  ]}
+></BlogTable>
+
+
+### Reference
+
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />
