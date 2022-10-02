@@ -4,6 +4,7 @@ import CustomLink from "./CustomLink";
 import DocsHeading from "./DocsHeading";
 import { Strong } from "./MDXComponents.styled";
 import BlogTable from "./Table";
+import TableContent from "./TableContent";
 
 const MDXComponents = {
   H1: (props: any) => <DocsHeading as="h1" {...props}></DocsHeading>,
@@ -13,6 +14,7 @@ const MDXComponents = {
   BlogTable,
   Button,
   SyntaxHighlighter,
+  TableContent,
 };
 
 export default MDXComponents;

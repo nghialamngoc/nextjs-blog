@@ -5,6 +5,7 @@ import { MDXRemote } from "next-mdx-remote";
 import { serialize } from "next-mdx-remote/serialize";
 import path from "path";
 import MDXComponents from "../../src/components/MDXComponents";
+import TableContent from "../../src/components/MDXComponents/TableContent";
 
 import { IPost } from "../../src/interfaces/post";
 import { Container } from "../../styles/Post.styled";

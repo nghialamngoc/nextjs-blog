@@ -10,11 +10,27 @@ tags: ["nextjs", "javascript"]
 
 ## Agenda
 
-1. [Pre-rendering](#pre-rendering)
-2. [SSG - Static Site Generation](#ssg-static-site-generation)
-3. [SSR - Server Side Rendering](#ssr-server-side-rendering)
-4. [CSR - Client Side Rendering](#csr-client-side-rendering)
-5. [ISR - Incremental Static Regeneration](#isr-incremental-static-regeneration)
+<TableContent
+  data={[
+    { title: "Pre-rendering", href: "#pre-rendering" },
+    {
+      title: "SSG - Static Site Generation",
+      href: "#ssg-static-site-generation",
+    },
+    {
+      title: "SSR - Server Side Rendering",
+      href: "#ssr-server-side-rendering",
+    },
+    {
+      title: "CSR - Client Side Rendering",
+      href: "#csr-client-side-rendering",
+    },
+    {
+      title: "ISR - Incremental Static Regeneration",
+      href: "#isr-incremental-static-regeneration",
+    },
+  ]}
+></TableContent>
 
 <H2 id="pre-rendering">1. Pre-rendering</H2>
 
@@ -45,7 +61,9 @@ The HTML is generated on **each request**
 
 ![Client Side Rendering](https://nextjs.org/static/images/learn/data-fetching/client-side-rendering.png)
 
-<H2 id="isr-incremental-static-regeneration">5. ISR - Incremental Static Regeneration</H2>
+<H2 id="isr-incremental-static-regeneration">
+  5. ISR - Incremental Static Regeneration
+</H2>
 
 ![Incremental Static Regeneration](https://cloud.netlifyusercontent.com/assets/344dbf88-fdf9-42bb-adb4-46f01eedd629/14bd554d-ea02-49d9-8077-7b94f8ba69ad/generation-regeneration-nextjs.png)
 
@@ -58,14 +76,33 @@ Good news! Pre-rendering form is per-page basis
 <BlogTable
   headers={["#", "Name", "Description"]}
   rows={[
-    ["1", "Static", "automatically rendered as static HTML (uses no initial props)"],
-    ["2", "SSG", "automatically generated as static HTML + JSON (uses getStaticProps)"],
-    ["3", "ISR", "incremental static regeneration (uses revalidate in getStaticProps)"],
-    ["4", "SSG + CSR", "pre-rendered HTML + data fetching on client side using useEffect"],
-    ["5", "SSR", "server-side renders at runtime (uses getInitialProps or getServerSideProps)"],
+    [
+      "1",
+      "Static",
+      "automatically rendered as static HTML (uses no initial props)",
+    ],
+    [
+      "2",
+      "SSG",
+      "automatically generated as static HTML + JSON (uses getStaticProps)",
+    ],
+    [
+      "3",
+      "ISR",
+      "incremental static regeneration (uses revalidate in getStaticProps)",
+    ],
+    [
+      "4",
+      "SSG + CSR",
+      "pre-rendered HTML + data fetching on client side using useEffect",
+    ],
+    [
+      "5",
+      "SSR",
+      "server-side renders at runtime (uses getInitialProps or getServerSideProps)",
+    ],
   ]}
 ></BlogTable>
-
 
 ### Reference
 
