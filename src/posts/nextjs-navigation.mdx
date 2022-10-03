@@ -10,11 +10,24 @@ tags: ["nextjs", "javascript"]
 
 ## Agenda
 
-1. Navigate between pages with next/link
-2. Navigate to a page programmatically using router.push()
-3. How prefetching works
+<TableContent
+  data={[
+    {
+      title: "Navigate between pages with next/link",
+      href: "#navigate-between-pages",
+    },
+    {
+      title: "Navigate to a page programmatically using router.push()",
+      href: "#navigate-to-programmatically",
+    },
+    {
+      title: "How prefetching works",
+      href: "#how-prefetching-works",
+    },
+  ]}
+></TableContent>
 
-## 1. Navigate between pages with next/link
+<H2 id="navigate-between-pages"> 1. Navigate between pages with next/link </H2>
 
 ```
   pages
@@ -33,29 +46,40 @@ tags: ["nextjs", "javascript"]
     )
   }
 ```
+
 < **Link** > props
 
 <BlogTable
   headers={["#", "Name", "Default", "Description"]}
   rows={[
     ["1", "href", "", "REQUIRED. the path or URL to navigate to."],
-    ["2", "passHref", "false", "Forces Link to send the href property to its child"],
+    [
+      "2",
+      "passHref",
+      "false",
+      "Forces Link to send the href property to its child",
+    ],
     ["3", "prefetch", "true", "Prefetch the page in the background"],
-    ["4", "replace", "false", "Replace the current history state instead of adding a new url into the stack"],
+    [
+      "4",
+      "replace",
+      "false",
+      "Replace the current history state instead of adding a new url into the stack",
+    ],
     ["5", "scroll", "true", "Scroll to the top of the page after a navigation"],
   ]}
 ></BlogTable>
 
 > next/link docs: [https://nextjs.org/docs/api-reference/next/link](https://nextjs.org/docs/api-reference/next/link).
 
-## 2. Navigate to a page programmatically using router.push()
+<H2 id="navigate-to-programmatically"> 2. Navigate to a page programmatically using router.push() </H2>
 
 <SyntaxHighlighter language="javascript">
 {`
   import { useRouter } from 'next/router'
 
-  function App() {
-    const router = useRouter();
+function App() {
+const router = useRouter();
 
     function handleSubmit() {
       router.push('/success-page');
@@ -71,9 +95,11 @@ tags: ["nextjs", "javascript"]
     }
 
     return (...);
-  }
+
+}
 
 `}
+
 </SyntaxHighlighter>
 
 <BlogTable
@@ -95,8 +121,16 @@ tags: ["nextjs", "javascript"]
   headers={["#", "Name", "Description"]}
   rows={[
     ["1", "router.push()", "Handles client-side transitions"],
-    ["2", "router.replace()", "prevent adding a new URL entry into the history stack"],
-    ["3", "router.prefetch()", "Prefetch pages for faster client-side transitions"],
+    [
+      "2",
+      "router.replace()",
+      "prevent adding a new URL entry into the history stack",
+    ],
+    [
+      "3",
+      "router.prefetch()",
+      "Prefetch pages for faster client-side transitions",
+    ],
     ["4", "router.back()", "Navigate back in history"],
     ["5", "router.reload()", "executes window.location.reload()"],
   ]}
@@ -104,7 +138,7 @@ tags: ["nextjs", "javascript"]
 
 > next/link docs: [https://nextjs.org/docs/api-reference/next/router](https://nextjs.org/docs/api-reference/next/router).
 
-## 3. How prefetching works
+<H2 id="how-prefetching-works"> 3. How prefetching works </H2>
 
 Prefetch the page in the background for faster client-side transitions (by default Link will have prefetch
 turned ON)
@@ -120,6 +154,7 @@ turned ON)
   }
 
 `}
+
 </SyntaxHighlighter>
 
 - Only prefetches links that appear in the viewport.
@@ -140,6 +175,7 @@ turned ON)
   }
 
 `}
+
 </SyntaxHighlighter>
 
 ### Reference

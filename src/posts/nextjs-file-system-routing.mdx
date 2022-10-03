@@ -6,9 +6,25 @@ thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
 tags: ["nextjs", "javascript"]
 ---
 
+## Agenda
+
+<TableContent
+  data={[
+    { title: "Overview", href: "#oveview" },
+    {
+      title: "Dynamic Routes",
+      href: "#dynamic-routes",
+    },
+    {
+      title: "Route match order",
+      href: "#route-match-order",
+    }
+  ]}
+></TableContent>
+
 # NextJs File System Routing
 
-## 1. Overview
+<H2 id="oveview"> 1. Overview </H2>
 
 ![NextJs File System Routing](https://global.discourse-cdn.com/meteor/optimized/3X/3/e/3e397f076eef91c6df1fca2dd16ee1952c21543b_2_689x318.jpeg)
 
@@ -38,7 +54,7 @@ But in **NextJS**, we use **File-system Routing**, what does it means?
   - **Nested routes**: nested folder in pages
   - **Dynamic routes**: brackets in file name to match parameter dynamically
 
-## 2. Dynamic Routes
+<H2 id="dynamic-routes"> 2. Dynamic Routes </H2>
 
 We can use dynamic routes (bracket syntax) to support path parameters.
 
@@ -104,7 +120,7 @@ but it won't match **/posts**
 **Optional catch all routes:** pages/posts/[[...slug]].tsx will match:
 Same to **Catch all routes** but it also match **/posts**
 
-## 3. Route match order
+<H2 id="route-match-order"> 3. Route match order </H2>
 <BlogTable
   headers={["Name", "File Path", "Priority"]}
   rows={[
