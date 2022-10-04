@@ -1,0 +1,128 @@
+---
+title: NextJs getStaticProps
+createDate: "2021/09/28"
+description: NextJs getStaticProps
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+## Agenda
+
+<TableContent
+  data={[
+    {
+      title: "Overview",
+      href: "#overview",
+    },
+    {
+      title: "Router.query",
+      href: "#router-query",
+    },
+  ]}
+></TableContent>
+
+<H2 id="overview"> 1. getStaticProps </H2>
+
+![NextJs getStaticProps](https://nextjs.org/static/images/learn/data-fetching/static-generation.png)
+
+Export a function at Page level to indicate the form of re-rendering.
+
+<BlogTable
+  headers={["#", "Name", "Use"]}
+  rows={[
+    ["1", "Static HTML Generation", "N/A"],
+    ["2", "Static HTML + JSON Data", "getStaticProps"],
+    [
+      "3",
+      "Static HTML + JSON Data + Dynamic Routes",
+      "getStaticProps + getStaticPaths",
+    ],
+  ]}
+></BlogTable>
+
+- Your page **content** depends on external data: Use **getStaticProps**.
+- Your page **paths** depend on external data: Use **getStaticPaths** (usually in addition to getStaticProps)
+
+> Next docs: [https://nextjs.org/docs/basic-features/pages](https://nextjs.org/docs/basic-features/pages).
+
+**When should I use Static Generation?**
+
+- Marketing pages
+- Blog posts
+- E-commerce product listings
+- Help and documentation
+
+<H2 id="static-html-generation"> 2. Static HTML generation </H2>
+
+- No need to export any function getStaticProps or getStaticPaths.
+- The HTML will be generated at build time.
+
+<SyntaxHighlighter language="javascript">
+{`
+  export default function AboutPage() {
+    return <div>About Page</div>
+  }
+
+`}
+
+</SyntaxHighlighter>
+
+<H2 id="static-html-json-data"> 2. Static HTML + JSON Data </H2>
+
+**getStaticProps**
+
+- Should export from a Page.
+- Can't use with getServerSideProps()
+- Only run on build time (server side)
+- Run on every request in dev mode
+
+> Next docs: [https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation](https://nextjs.org/docs/basic-features/data-fetching#getstaticprops-static-generation).
+
+<SyntaxHighlighter language="javascript">
+{`
+  interface Post {
+    id: string;
+    title: string;
+  }
+
+  interface PageProps {
+    post: Post;
+  }
+
+  export default function PostDetailPage({ post }: PageProps) {
+    const router = useRouter()
+    return (
+      <div>
+        <h1>Post Page</h1>
+        <p>{post.id}</p>
+        <p>{post.title}</p>
+      </div>
+    )
+  }
+
+  export const getStaticProps: GetStaticProps<PageProps> = async () => {
+    await new Promise((resolve) => setTimeout(resolve, 5000))
+      return {
+        props: {
+          post: {
+          id: '123-abc',
+          title: 'Learn NextJS'
+        }
+      },
+    }
+  }
+
+`}
+
+</SyntaxHighlighter>
+
+<br />
+
+### Reference
+
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />

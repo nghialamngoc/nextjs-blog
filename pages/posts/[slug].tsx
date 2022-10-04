@@ -73,9 +73,9 @@ export const getStaticProps: GetStaticProps<any> = async (
 
     return {
       props: {
-        notFound: true,
         post: {},
       },
+      notFound: true,
     };
   }
 };

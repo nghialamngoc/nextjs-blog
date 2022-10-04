@@ -1,0 +1,57 @@
+---
+title: NextJs Automatic Static Optimization
+createDate: "2021/09/28"
+description: NextJs Automatic Static Optimization
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+## Agenda
+
+<TableContent
+  data={[
+    {
+      title: "Automatic Static Optimization",
+      href: "#automatic-static-optimization",
+    },
+    {
+      title: "Router.query",
+      href: "#router-query",
+    },
+  ]}
+></TableContent>
+
+<H2 id="automatic-static-optimization"> 1. Automatic Static Optimization </H2>
+
+Next.js automatically determines that a page is static (can be prerendered) if it has no blocking data
+requirements. This determination is made by the absence of **getServerSideProps** and
+**getInitialProps** in the page.
+
+> next/link docs: [https://nextjs.org/docs/advanced-features/automatic-static-optimization](https://nextjs.org/docs/advanced-features/automatic-static-optimization).
+
+<H2 id="router-query"> 1. Router.query </H2>
+
+Automatic Static Optimization (ASO)
+
+<BlogTable
+  headers={["", "ASO", "Not ASO (getServerSideProps)"]}
+  rows={[
+    [
+      "router.query",
+      "empty when pre-rendering, update after hydration",
+      "always available",
+    ],
+    ["next build", "output an HTML", "output an JS file"],
+  ]}
+></BlogTable>
+
+<br />
+
+### Reference
+
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />
