@@ -1,0 +1,75 @@
+---
+title: NextJs getStaticPaths
+createDate: "2021/09/28"
+description: NextJs getStaticPaths
+thumbnailUrl: "/javascript-functions-thumbnail.jpeg"
+tags: ["nextjs", "javascript"]
+---
+
+## Agenda
+
+<TableContent
+  data={[
+    {
+      title: "Overview",
+      href: "#overview",
+    },
+    {
+      title: "getStaticPaths",
+      href: "#getStaticPaths",
+    },
+  ]}
+></TableContent>
+
+<H2 id="overview"> 1. Overview </H2>
+
+![NextJs getStaticPaths](https://nextjs.org/static/images/learn/dynamic-routes/page-path-external-data.png)
+
+- What: Pre-generate a list of pages
+- When: using dynamic route
+- Why: performance, SEO
+
+**Eg**: you want to generate 10 blog posts with data fetched from API.
+
+<H2 id="getStaticPaths"> 2. getStaticPaths </H2>
+
+- Can't use with getServerSideProps
+- Only runs at build time on server-side.
+- Can only exported from a Page
+
+<SyntaxHighlighter language="javascript">
+{`
+  export async function getStaticPaths() {
+    return {
+      paths: [
+        { params: { id: '1' } },
+        { params: { id: '2' } },
+        { params: { id: '3' } },
+      ],
+      fallback: false, // or true or 'blocking'
+    };
+  }
+
+`}
+
+</SyntaxHighlighter>
+
+**fallback: false** => if you access the path that does not return in getStaticPaths. It will redirect to the not found page
+
+**fallback: true** => new path will be statically generated (getStaticProps is called) - loading state is shown while generating page(via router.isFallback and showing fallback page)
+
+**fallback: blocking** => new path will be waiting for HTML to be generated (via SSR ) - there will be no loading state
+
+
+> More details: [https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation](https://nextjs.org/docs/basic-features/data-fetching#getStaticPaths-static-generation).
+
+<br />
+
+### Reference
+
+- **Easy Frontend**
+
+<br />
+<br />
+<br />
+<br />
