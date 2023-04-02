@@ -1,0 +1,9 @@
+.root {
+  font-size: 16px;
+}
+
+@mixin media lg {
+  .root {
+    font-size: 32px;
+  }
+}

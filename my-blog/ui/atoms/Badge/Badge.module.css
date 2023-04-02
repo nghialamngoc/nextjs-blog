@@ -1,0 +1,44 @@
+.root {
+  border-radius: 4px;
+  white-space: nowrap;
+}
+
+/* Sizes */
+.root[data-size="sm"] {
+  font-size: 10px;
+  padding: 1px 3px;
+  font-weight: var(--font-weight-normal);
+}
+
+.root[data-size="md"] {
+  font-size: 16px;
+  padding: 4px 8px;
+  font-weight: var(--font-weight-bold);
+}
+
+.root[data-size="lg"] {
+  font-size: 20px;
+  padding: 10px 8px;
+  font-weight: var(--font-weight-bold);
+}
+
+/* Colors */
+.root[data-color="primary"] {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.root[data-color="secondary"] {
+  color: var(--color-text);
+  background-color: var(--color-secondary);
+}
+
+.root[data-color="white"] {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.root[data-color="dark-blue"] {
+  color: var(--color-white);
+  background-color: var(--color-blue-dark);
+}

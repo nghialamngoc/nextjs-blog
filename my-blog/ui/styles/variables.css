@@ -1,0 +1,52 @@
+:root {
+  --body-font-family: -apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,Liberation Sans,sans-serif;
+
+  /* Font weights */
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-bold: 700;
+
+  /* Colors */
+  --color-primary: #e87722;
+  --color-primary-light: #fae4d3;
+  --color-primary-lighter: #fef9f4;
+  --color-primary-dark: #d9d9d9;
+  --color-primary-alpha-20: rgb(232 119 34 / 20%);
+  --color-secondary: #6eceb2;
+  --color-white: #ffffff;
+  --color-black: #000000;
+  --color-error: #b30909;
+  --color-text-lighter: #273d35;
+  --color-text: #183028;
+  --color-grey-lighter: #edeff0;
+  --color-grey: #dbdfe1;
+  --color-grey-dark: #8b8e8f;
+  --color-grey-dark-2: #b3b6b8;
+  --color-grey-darker: #636566;
+  --color-blue-dark: #0097A9;
+
+  /* Shadows */
+  --shadow-outline: 0 0 0 3px rgb(232 119 34 / 60%);
+  --shadow-md: rgb(0 0 0 / 20%) 0px 2px 4px;
+
+  /* Container sizes */
+  --container-sm: 576px;
+  --container-md: 768px;
+  --container-lg: 990px;
+  --container-xl: 1288px;
+
+  /* zIndex */
+  --zIndex-base: 1;
+  --zIndex-docked: 10;
+  --zIndex-floating: 9000;
+}
+
+:root[lang="en"] {
+  --body-font-family: CircularWeb, sans-serif;
+}
+
+@mixin media md {
+  :root {
+    --body-font-family: NotoSansTC,sans-serif;
+  }
+}

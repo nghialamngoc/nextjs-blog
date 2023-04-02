@@ -6,7 +6,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "@types/node": "18.15.11",
@@ -14,9 +16,30 @@
     "@types/react-dom": "18.0.11",
     "eslint": "8.37.0",
     "eslint-config-next": "13.2.4",
+    "eslint-config-prettier": "^8.6.0",
+    "eslint-plugin-prettier": "^4.2.1",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-mixins": "^9.0.4",
+    "postcss-preset-env": "^8.0.1",
     "next": "13.2.4",
     "react": "18.2.0",
     "react-dom": "18.2.0",
     "typescript": "5.0.3"
+  },
+  "resolutions": {
+    "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.21.4",
+    "@storybook/addon-actions": "^6.5.16",
+    "@storybook/addon-essentials": "^6.5.16",
+    "@storybook/addon-interactions": "^6.5.16",
+    "@storybook/addon-links": "^6.5.16",
+    "@storybook/builder-webpack5": "^6.5.16",
+    "@storybook/manager-webpack5": "^6.5.16",
+    "@storybook/react": "^6.5.16",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "eslint-plugin-storybook": "^0.6.11"
   }
 }

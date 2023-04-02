@@ -1,0 +1,49 @@
+@import url('./normalize.css');
+@import url('./variables.css');
+@import url('./fonts/index.css');
+
+* {
+  -webkit-tap-highlight-color: rgb(0 0 0 / 5%);
+}
+
+html {
+  height: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  height: 100%;
+  font-family: var(--body-font-family);
+  color: var(--color-text);
+}
+
+a {
+  color: var(--color-primary);
+}
+
+/* Customize scrollbar */
+body::-webkit-scrollbar-thumb {
+  border-radius: 0;
+}
+
+::-webkit-scrollbar-button {
+  width: 0;
+  height: 0;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #dbdfe1;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #777;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
