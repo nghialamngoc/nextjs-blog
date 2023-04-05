@@ -1,0 +1,32 @@
+.root {
+  width: 100%;
+  margin: 0 auto;
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+/* Sizes */
+.root[data-max-width="sm"] {
+  max-width: var(--container-sm);
+}
+
+.root[data-max-width="md"] {
+  max-width: var(--container-md);
+}
+
+.root[data-max-width="lg"] {
+  max-width: var(--container-lg);
+}
+
+.root[data-max-width="xl"] {
+  max-width: var(--container-xl);
+}
+
+/* Colors */
+.root[data-bg-color="primary"] {
+  background-color: var(--color-primary);
+}
+
+.root[data-bg-color="primary-lighter"] {
+  background-color: var(--color-primary-lighter);
+}

@@ -1,12 +1,5 @@
-import AnnouncementsBanner from '@/components/AnnouncementsBanner'
-import Badge from '@/ui/atoms/Badge'
+import Container from '@/ui/atoms/Container'
 
 export default function Home() {
-  return (
-    <>
-      awd
-      <Badge color="primary">Most popular</Badge>
-      <AnnouncementsBanner />
-    </>
-  )
+  return <Container>Home Page</Container>
 }
