@@ -1,6 +1,8 @@
 @import url('./normalize.css');
 @import url('./variables.css');
 @import url('./fonts/index.css');
+@import url('./helpers/font-size.css');
+@import url('./helpers/font-weight.css');
 
 * {
   -webkit-tap-highlight-color: rgb(0 0 0 / 5%);

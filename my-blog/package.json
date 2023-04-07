@@ -8,8 +8,7 @@
     "start": "next start",
     "lint": "next lint",
     "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook",
-    "prepare": "husky install"
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "next": "13.1.6",
@@ -39,7 +38,6 @@
     "eslint-config-prettier": "^8.6.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-storybook": "^0.6.11",
-    "husky": "^8.0.0",
     "postcss-flexbugs-fixes": "^5.0.2",
     "postcss-mixins": "^9.0.4",
     "postcss-preset-env": "^8.0.1"

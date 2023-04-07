@@ -1,7 +1,7 @@
 // Use this trick to import js to ts
 module.exports = {
-  locales: ['zh', 'en'],
-  defaultLocale: 'zh',
+  locales: ['vn', 'en'],
+  defaultLocale: 'vn',
   breakpoints: {
     xs: '375px',
     sm: '576px',
