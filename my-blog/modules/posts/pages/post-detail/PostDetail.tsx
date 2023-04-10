@@ -12,7 +12,7 @@ export const PostDetail = () => {
       <div className="mb-32">
         <TextDivider />
       </div>
-      <div className="size-20 lh-24">
+      <div className="lh-24">
         Từ nhỏ, mình đã luôn là đứa hay muốn vượt ra khỏi những quy điều, phá luật, nên đã nghĩ bản thân sẽ không thể
         nào duy trì lâu dài tính kỷ luật. Thế nhưng, chuyện đã khác cho đến khi cuộc sống của mình có nhiều thứ tồi tệ
         xảy ra cùng một lúc và mình bắt đầu chạy bộ – chạy bộ một cách nghiêm túc.
