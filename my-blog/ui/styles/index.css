@@ -3,6 +3,9 @@
 @import url('./fonts/index.css');
 @import url('./helpers/font-size.css');
 @import url('./helpers/font-weight.css');
+@import url('./helpers/display.css');
+@import url('./helpers/margin.css');
+@import url('./helpers/line-height.css');
 
 * {
   -webkit-tap-highlight-color: rgb(0 0 0 / 5%);
@@ -17,6 +20,7 @@ body {
   height: 100%;
   font-family: var(--body-font-family);
   color: var(--color-text);
+  font-weight: var(--font-weight-normal);
 }
 
 a {

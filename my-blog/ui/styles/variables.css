@@ -47,6 +47,6 @@
 
 @mixin media md {
   :root {
-    --body-font-family: NotoSansTC,sans-serif;
+    --body-font-family: Gilroy,sans-serif;
   }
 }

@@ -1,3 +1,9 @@
+import TextDivider from '@/ui/atoms/TextDivider'
+
 export default function HomeModule() {
-  return <div>HomeModule</div>
+  return (
+    <div>
+      <TextDivider />
+    </div>
+  )
 }

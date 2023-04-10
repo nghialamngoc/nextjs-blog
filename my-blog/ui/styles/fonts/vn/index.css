@@ -1,23 +1,23 @@
 @font-face {
-  font-family: "NotoSansTC";
-  src: url("./NotoSansTC-Regular.woff2") format("woff2"), url("./NotoSansTC-Regular.woff") format("woff");
-  font-weight: 400;
+  font-family: "Gilroy";
+  src: url("./Montserrat-Ace-Regular.otf") format("opentype");
+  font-weight: 300;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "NotoSansTC";
-  src: url("./NotoSansTC-Medium.woff2") format("woff2"), url("./NotoSansTC-Medium.woff") format("woff");
+  font-family: "Gilroy";
+  src: url("./Montserrat-Ace-Medium.otf") format("opentype");
   font-weight: 500;
   font-style: normal;
   font-display: swap;
 }
 
 @font-face {
-  font-family: "NotoSansTC";
-  src: url("./NotoSansTC-Medium.woff2") format("woff2"), url("./NotoSansTC-Medium.woff") format("woff");
-  font-weight: 700;
+  font-family: "Gilroy";
+  src: url("./Montserrat-Ace-Bold.otf") format("opentype");
+  font-weight: 600;
   font-style: normal;
   font-display: swap;
 }
