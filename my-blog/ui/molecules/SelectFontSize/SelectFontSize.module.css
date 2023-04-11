@@ -1,0 +1,12 @@
+.root {
+
+}
+
+.item {
+  color: var(--color-grey);
+  cursor: pointer;
+}
+
+.item:hover, .item[data-active="true"] {
+  color: var(--color-text)
+}

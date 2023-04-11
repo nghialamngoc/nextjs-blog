@@ -1,11 +1,11 @@
-import type { AppProps } from 'next/app'
 import { Provider as JotaiProvider } from 'jotai'
+import type { AppProps } from 'next/app'
+import { useModuleInit } from '@/hooks/module/use-module-init'
+import { mainStore } from '@/store/main'
+import { useRouter } from 'next/router'
 
 // Global styles
 import '@/ui/styles/index.css'
-import { useRouter } from 'next/router'
-import { mainStore } from '@/store/main'
-import { useModuleInit } from '@/hooks/module/use-module-init'
 
 export default function App({ Component, pageProps }: AppProps) {
   const { moduleData } = pageProps ?? {}
