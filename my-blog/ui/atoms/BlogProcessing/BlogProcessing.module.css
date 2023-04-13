@@ -1,0 +1,19 @@
+.root {
+  width: 100%;
+  position: relative;
+  margin-bottom: 16px;
+}
+
+.bar {
+  height: 5px;
+  width: 100%;
+  background-color: var(--color-grey);
+}
+
+.processing {
+  height: 5px;
+  position: absolute;
+  top: 0;
+  z-index: 2;
+  background-color: var(--color-primary);
+}

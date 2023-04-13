@@ -1,16 +1,20 @@
+import { FC, ReactNode, useEffect, useState } from 'react'
 import { FONT_SIZE_OPTIONS, FONT_SIZE_STORE_NAME } from '@/config/common'
 import Container, { ContainerProps } from '@/ui/atoms/Container'
+import BlogProcessing from '@/ui/atoms/BlogProcessing'
 import SelectFontSize from '@/ui/molecules/SelectFontSize'
-import { FC, ReactNode, useEffect, useState } from 'react'
+
+import styles from './Layout.module.css'
 
 export interface LayoutProps {
   children?: ReactNode
   withFontSelection?: boolean
+  withBlogProcessing?: boolean
   containerSize?: ContainerProps['maxWidth']
 }
 
 export const Layout: FC<LayoutProps> = (props) => {
-  const { children, withFontSelection, containerSize } = props
+  const { children, withFontSelection, withBlogProcessing, containerSize } = props
 
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -32,9 +36,12 @@ export const Layout: FC<LayoutProps> = (props) => {
         fontSize: FONT_SIZE_OPTIONS[activeIndex].value,
       }}
     >
-      <div className="d-flex mb-16 align-center justify-end">
+      <div className={styles.sticky}>
+        {withBlogProcessing && <BlogProcessing />}
         {withFontSelection && (
-          <SelectFontSize activeIndex={activeIndex} options={FONT_SIZE_OPTIONS} onClick={onChange} />
+          <div className="d-flex mb-16 align-center justify-end">
+            <SelectFontSize activeIndex={activeIndex} options={FONT_SIZE_OPTIONS} onClick={onChange} />
+          </div>
         )}
       </div>
       {children}
