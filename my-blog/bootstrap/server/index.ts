@@ -4,6 +4,12 @@ import { getModuleHandler } from './get-module-handler'
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   try {
+    // Get setting data
+    const settingData = {
+      isDarkMode: false,
+      logo: 'Dev Sharing',
+    }
+
     // Get module data
     const moduleData = await getModuleData(context)
 
@@ -31,6 +37,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     return {
       props: {
         moduleData,
+        settingData,
         // Prevent override global data
         [moduleData.moduleType]: props?.props ?? {},
       },

@@ -18,5 +18,6 @@ export const FONT_SIZE_OPTIONS = [
 ]
 
 export const FONT_SIZE_STORE_NAME = 'dev_sharing_font_size'
+export const IS_DARK_MODE_STORE_NAME = 'dev_sharing_is_dark_mode'
 
 export const DEFAULT_LOCALE = defaultLocale

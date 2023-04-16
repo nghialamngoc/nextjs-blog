@@ -21,6 +21,7 @@ body {
   font-family: var(--body-font-family);
   color: var(--color-text);
   font-weight: var(--font-weight-normal);
+  background-color: var(--color-white);
 }
 
 a {
@@ -52,4 +53,19 @@ body::-webkit-scrollbar-thumb {
 ::-webkit-scrollbar {
   width: 8px;
   height: 8px;
+}
+
+.sticky {
+  position: sticky;
+  top: 0;
+  z-index: 2;
+  background-color: var(--color-white);
+}
+
+body.dark-mode, body.dark-mode .sticky {
+  background-color: var(--color-dark);
+}
+
+body.dark-mode div, body.dark-mode span{
+  color: var(--color-white) !important
 }

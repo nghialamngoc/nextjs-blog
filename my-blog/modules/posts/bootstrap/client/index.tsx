@@ -9,7 +9,7 @@ export default function PostModule() {
   const { moduleSubPath } = useModule()
 
   return (
-    <Layout containerSize="md" withFontSelection={true} withBlogProcessing={true}>
+    <Layout containerSize="md" withFontSelection={true} withBlogProcessing={true} withDarkModeToggle={true}>
       {moduleSubPath ? <PostDetail></PostDetail> : <PostList></PostList>}
     </Layout>
   )

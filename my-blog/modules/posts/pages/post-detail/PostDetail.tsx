@@ -2,7 +2,11 @@ import TextDivider from '@/ui/atoms/TextDivider'
 
 export const PostDetail = () => {
   return (
-    <div>
+    <div
+      style={{
+        height: '200vh',
+      }}
+    >
       <div className="d-flex justify-between mb-16">
         <span className="size-08-em">Living</span>
         <div className="size-08-em">July 25, 2022</div>
