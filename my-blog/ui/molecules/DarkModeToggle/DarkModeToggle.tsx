@@ -13,7 +13,7 @@ export const DarkModeToggle: FC<DarkModeToggleProps> = (props) => {
   return (
     <div className={styles.toggleWrapper}>
       <input
-        defaultChecked={value}
+        checked={value}
         type="checkbox"
         className={styles.dn}
         id="dn"

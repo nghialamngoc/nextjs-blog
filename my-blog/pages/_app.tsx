@@ -1,5 +1,4 @@
 import { useModuleInit } from '@/hooks/module/use-module-init'
-import { useSettingInit } from '@/hooks/setting/use-setting-init'
 import { mainStore } from '@/store/main'
 import { Provider as JotaiProvider } from 'jotai'
 import type { AppProps } from 'next/app'
@@ -7,14 +6,18 @@ import { useRouter } from 'next/router'
 
 // Global styles
 import '@/ui/styles/index.css'
+import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { moduleData, settingData } = pageProps ?? {}
+  const { moduleData } = pageProps ?? {}
 
   const { locale } = useRouter()
 
   useModuleInit(moduleData)
-  useSettingInit(settingData)
+
+  useEffect(() => {
+    console.log('here')
+  }, [])
 
   return (
     // Because each store should be init once
