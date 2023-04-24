@@ -1,11 +1,17 @@
 import Markdown from '@/ui/atoms/Markdown'
 import TextDivider from '@/ui/atoms/TextDivider'
+import { FC } from 'react'
 
-export const PostDetail = () => {
-  const a = {
-    thumb: 'awd',
-  }
+export interface PostDetailProps {
+  id: string
+  title: string
+  description: string
+  categories: string[]
+  content: string
+}
 
+export const PostDetail: FC<PostDetailProps> = (props) => {
+  const { content } = props
   return (
     <div
       style={{
@@ -21,12 +27,7 @@ export const PostDetail = () => {
         <TextDivider />
       </div>
       <div className="size-1-em lh-150">
-        <Markdown
-          {...a}
-          content="Từ nhỏ, mình đã luôn là đứa hay muốn vượt ra khỏi những quy điều, phá luật, nên đã nghĩ bản thân sẽ không thể
-        nào duy trì lâu dài tính kỷ luật. Thế nhưng, chuyện đã khác cho đến khi cuộc sống của mình có nhiều thứ tồi tệ
-        xảy ra cùng một lúc và mình bắt đầu chạy bộ – chạy bộ một cách nghiêm túc."
-        ></Markdown>
+        <Markdown content={content}></Markdown>
       </div>
     </div>
   )

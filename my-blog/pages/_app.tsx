@@ -6,18 +6,13 @@ import { useRouter } from 'next/router'
 
 // Global styles
 import '@/ui/styles/index.css'
-import { useEffect } from 'react'
 
 export default function App({ Component, pageProps }: AppProps) {
-  const { moduleData } = pageProps ?? {}
+  const { moduleData, ...rest } = pageProps ?? {}
 
   const { locale } = useRouter()
 
   useModuleInit(moduleData)
-
-  useEffect(() => {
-    console.log('here')
-  }, [])
 
   return (
     // Because each store should be init once
