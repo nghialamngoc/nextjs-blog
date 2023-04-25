@@ -17,7 +17,8 @@ export const DarkModeToggle: FC<DarkModeToggleProps> = (props) => {
         type="checkbox"
         className={styles.dn}
         id="dn"
-        onChange={(e) => onChange?.(e.target.checked)}
+        onChange={() => {}}
+        onClick={() => onChange?.(!value)}
       />
       <label htmlFor="dn" className={styles.toggle}>
         <span className={styles.toggleHandler}>

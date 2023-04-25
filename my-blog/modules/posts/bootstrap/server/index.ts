@@ -5,6 +5,7 @@ import path from 'path'
 import fs from 'fs'
 import matter from 'gray-matter'
 import { PostDetailProps } from '../../pages/post-detail'
+import { readFileMarkdown } from '@/utils/read-file-mardown'
 
 const handler = (props: ModuleAtom) => {
   return async (context: GetServerSidePropsContext) => {
@@ -17,20 +18,22 @@ const handler = (props: ModuleAtom) => {
       if (postPathName) {
         const fullPath = path.join(process.cwd(), '/post-files/', postPathName)
         try {
-          const fileContent = fs.readFileSync(fullPath, 'utf8')
-          const { data, content } = matter(fileContent)
-          const { id = '', title = '', description = '', categories = [] } = data
+          const fileData = await readFileMarkdown(fullPath)
 
-          const postDetail: PostDetailProps = {
-            id,
-            title,
-            description,
-            categories,
-            content,
-          }
+          // const fileContent = fs.readFileSync(fullPath, 'utf8')
+          // const { data, content } = matter(fileContent)
+          // const { id = '', title = '', description = '', categories = [] } = data
+
+          // const postDetail: PostDetailProps = {
+          //   id,
+          //   title,
+          //   description,
+          //   categories,
+          //   content,
+          // }
 
           return {
-            props: postDetail,
+            props: fileData,
           }
         } catch (err) {
           console.log('[dev Sharing] [error]: Can not find post path name!')

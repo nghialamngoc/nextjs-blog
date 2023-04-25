@@ -6,7 +6,7 @@
   max-width: 100%;
 }
 
-.root p {
+.root > div {
   margin: 0 0 16px 0;
 }
 

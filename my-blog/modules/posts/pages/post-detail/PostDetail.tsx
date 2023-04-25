@@ -12,6 +12,7 @@ export interface PostDetailProps {
 
 export const PostDetail: FC<PostDetailProps> = (props) => {
   const { content } = props
+
   return (
     <div
       style={{
