@@ -1,11 +1,8 @@
-import { GetServerSidePropsContext } from 'next'
 import { ModuleAtom } from '@/hooks/module'
 import { PostIdsMapping } from '@/post-files'
-import path from 'path'
-import fs from 'fs'
-import matter from 'gray-matter'
-import { PostDetailProps } from '../../pages/post-detail'
 import { readFileMarkdown } from '@/utils/read-file-mardown'
+import { GetServerSidePropsContext } from 'next'
+import path from 'path'
 
 const handler = (props: ModuleAtom) => {
   return async (context: GetServerSidePropsContext) => {
@@ -20,23 +17,11 @@ const handler = (props: ModuleAtom) => {
         try {
           const fileData = await readFileMarkdown(fullPath)
 
-          // const fileContent = fs.readFileSync(fullPath, 'utf8')
-          // const { data, content } = matter(fileContent)
-          // const { id = '', title = '', description = '', categories = [] } = data
-
-          // const postDetail: PostDetailProps = {
-          //   id,
-          //   title,
-          //   description,
-          //   categories,
-          //   content,
-          // }
-
           return {
             props: fileData,
           }
         } catch (err) {
-          console.log('[dev Sharing] [error]: Can not find post path name!')
+          console.log('[dev Sharing] [error]: ', err)
           return {
             notFound: true,
           }

@@ -5,30 +5,34 @@ description: Khi bạn muốn một component lưu trữ một số thông tin. 
 categories: ['ReactJs']
 ---
 
-<p>Khi bạn muốn một component lưu trữ một số thông tin. Nhưng bạn không muốn thông tin này
+Khi bạn muốn một component lưu trữ một số thông tin. Nhưng bạn không muốn thông tin này
 trigger new render. Bạn có thể sử dụng ref
-</p>
 
-<h2>Cách thêm một ref trong component</h2>
+Cách thêm một ref trong component
 
 Importing the useRef Hook từ React:
 
-<code>import { useRef } from 'react';</code>
+<MarkdownCode>
+{`
+import { useRef } from 'react';
+`}
+</MarkdownCode>
 
 Gọi useRef trong function component với default value:
 
-<code>
 const ref = useRef(0);
-</code>
 
 useRef sẽ trả về một object như sau:
 
-<code>
-{ 
+<MarkdownCode>
+{`
+{
   current: 0 // The value you passed to useRef
 }
-</code>
+`}
+</MarkdownCode>
 
 Một ref có thể trỏ tới bất cứ thứ gì: number, a string, an object, a function, DOM, React Element
 
 Note: React component sẽ không re-render với bất cứ sự thay đổi nào của ref
+

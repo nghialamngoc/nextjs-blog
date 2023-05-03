@@ -4,6 +4,7 @@ import matter from 'gray-matter'
 import { remark } from 'remark'
 import html from 'remark-html'
 import prism from 'remark-prism'
+import { serialize } from 'next-mdx-remote/serialize'
 
 export const readFileMarkdown = async (pathFile: string) => {
   const fileContents = fs.readFileSync(pathFile, 'utf8')
@@ -17,7 +18,7 @@ export const readFileMarkdown = async (pathFile: string) => {
     title,
     categories,
     description,
-    content: await markdownToHtml(content || ''),
+    mdxSource: await serialize(content || ''),
   }
 
   return postDetail

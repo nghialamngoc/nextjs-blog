@@ -1,5 +1,6 @@
 import Markdown from '@/ui/atoms/Markdown'
 import TextDivider from '@/ui/atoms/TextDivider'
+import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FC } from 'react'
 
 export interface PostDetailProps {
@@ -7,11 +8,11 @@ export interface PostDetailProps {
   title: string
   description: string
   categories: string[]
-  content: string
+  mdxSource: MDXRemoteSerializeResult
 }
 
 export const PostDetail: FC<PostDetailProps> = (props) => {
-  const { content } = props
+  const { mdxSource } = props
 
   return (
     <div
@@ -28,7 +29,7 @@ export const PostDetail: FC<PostDetailProps> = (props) => {
         <TextDivider />
       </div>
       <div className="size-1-em lh-150">
-        <Markdown content={content}></Markdown>
+        <Markdown mdxSource={mdxSource}></Markdown>
       </div>
     </div>
   )
