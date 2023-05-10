@@ -46,8 +46,6 @@
   --body-font-family: CircularWeb, sans-serif;
 }
 
-@mixin media md {
-  :root {
-    --body-font-family: Gilroy,sans-serif;
-  }
+:root {
+  --body-font-family: Gilroy,sans-serif;
 }

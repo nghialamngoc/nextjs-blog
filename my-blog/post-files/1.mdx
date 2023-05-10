@@ -36,3 +36,24 @@ Một ref có thể trỏ tới bất cứ thứ gì: number, a string, an objec
 
 Note: React component sẽ không re-render với bất cứ sự thay đổi nào của ref
 
+<MarkdownSandbox template="react" files={
+{"App.js": `
+import { useRef } from 'react';
+
+export default function Counter() {
+  let ref = useRef(0);
+
+  function handleClick() {
+    ref.current = ref.current + 1;
+    alert('You clicked ' + ref.current + ' times!');
+  }
+
+  return (
+    <button onClick={handleClick}>
+      Click me!
+    </button>
+  );
+}
+`}
+}>
+</MarkdownSandbox>

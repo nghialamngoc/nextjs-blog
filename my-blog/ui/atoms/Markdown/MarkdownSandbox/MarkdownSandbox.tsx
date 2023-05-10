@@ -1,3 +1,4 @@
+import { FC, useMemo } from 'react'
 import {
   SandpackCodeEditor,
   SandpackFileExplorer,
@@ -6,16 +7,33 @@ import {
   SandpackPreview,
   SandpackProvider,
   SandpackProviderProps,
+  SandpackFiles,
 } from '@codesandbox/sandpack-react'
-import { FC } from 'react'
 
 export interface MarkdownSandboxProps extends SandpackProviderProps {}
 
 export const MarkdownSandbox: FC<MarkdownSandboxProps> = (props) => {
   const { template, options, files } = props
+
+  const filesFormat = useMemo(() => {
+    if (!files) {
+      return
+    }
+
+    const result: SandpackFiles = {}
+
+    for (const key in files) {
+      if (Object.prototype.hasOwnProperty.call(files, key)) {
+        result[key] = files[key].toString().trim()
+      }
+    }
+
+    return result
+  }, [files])
+
   return (
     <div>
-      <SandpackProvider template={template} options={options} files={files}>
+      <SandpackProvider template={template} options={options} files={filesFormat}>
         <SandpackLayout>
           <SandpackCodeEditor showRunButton={false} />
           <SandpackPreview />

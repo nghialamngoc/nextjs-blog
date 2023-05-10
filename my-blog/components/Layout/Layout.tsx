@@ -41,7 +41,7 @@ export const Layout: FC<LayoutProps> = (props) => {
     >
       <div className="sticky">
         {withBlogProcessing && <BlogProcessing />}
-        <div className="d-flex mb-16 align-center justify-end">
+        <div className="d-flex mb-16 pb-16 align-center justify-end pr-16">
           <div className="d-flex align-center gap-16">
             {withFontSelection && (
               <SelectFontSize activeIndex={activeIndex} options={FONT_SIZE_OPTIONS} onClick={onChange} />

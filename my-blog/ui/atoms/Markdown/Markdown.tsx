@@ -1,9 +1,11 @@
 import { cx } from '@/utils/cx'
+import dynamic from 'next/dynamic'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { forwardRef, HTMLAttributes } from 'react'
 import MarkdownCode from './MarkdownCode'
+import MarkdownSandbox from './MarkdownSandbox'
 
-// const MarkdownCode = dynamic(() => import('./MarkdownCode'), {
+// const MarkdownSandbox = dynamic(() => import('./MarkdownSandbox'), {
 //   ssr: false,
 // })
 
@@ -14,6 +16,7 @@ import styles from './Markdown.module.css'
 
 export const MDXComponents = {
   MarkdownCode,
+  MarkdownSandbox,
 }
 
 export interface MarkdownProps extends Omit<HTMLAttributes<HTMLDivElement>, 'color'> {
