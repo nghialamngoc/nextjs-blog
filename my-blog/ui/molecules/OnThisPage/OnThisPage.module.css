@@ -1,0 +1,12 @@
+.link {
+  color: var(--color-text)
+}
+
+.link[data-active="true"] {
+  background-color: var(--color-primary-light);
+  color: var(--color-primary)
+}
+
+.link:hover {
+  color: var(--color-primary)
+}

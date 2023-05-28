@@ -1,0 +1,57 @@
+@each $value in 0, 1, 2, 3 {
+  .border-$(value) {
+    border-width: $(value)px;
+    border-style: solid;
+  }
+
+  .border-b-$(value) {
+    border-bottom-width: $(value)px;
+    border-bottom-style: solid;
+  }
+
+  .border-t-$(value) {
+    border-top-width: $(value)px;
+    border-top-style: solid;
+  }
+
+  .border-l-$(value) {
+    border-left-width: $(value)px;
+    border-left-style: solid;
+  }
+
+  .border-r-$(value) {
+    border-right-width: $(value)px;
+    border-right-style: solid;
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in 0, 1, 2, 3 {
+      .border-$(screen)-$(value) {
+        border-width: $(value)px;
+        border-style: solid;
+      }
+
+      .border-b-$(screen)-$(value) {
+        border-bottom-width: $(value)px;
+        border-bottom-style: solid;
+      }
+    
+      .border-t-$(screen)-$(value) {
+        border-top-width: $(value)px;
+        border-top-style: solid;
+      }
+    
+      .border-l-$(screen)-$(value) {
+        border-left-width: $(value)px;
+        border-left-style: solid;
+      }
+    
+      .border-r-$(screen)-$(value) {
+        border-right-width: $(value)px;
+        border-right-style: solid;
+      }
+    }
+  }
+}

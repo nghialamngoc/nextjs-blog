@@ -1,0 +1,18 @@
+.onThisPageSection {
+  display: none;
+}
+
+@mixin media lg {
+  .onThisPageSection {
+    display: block;
+    position: absolute;
+    right: 0;
+    top: 120px;
+    min-width: 400px;
+    height: 100%;
+  }
+
+  .onThisPageSection > div {
+    top: 80px;
+  }
+}

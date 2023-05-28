@@ -10,26 +10,29 @@ export const BlogProcessing = () => {
       return
     }
 
-    const body = document.body,
-      html = document.documentElement
-
-    const height = Math.max(
-      body.scrollHeight,
-      body.offsetHeight,
-      html.clientHeight,
-      html.scrollHeight,
-      html.offsetHeight
-    )
-
     const scroll = () => {
-      const html = document.documentElement
+      const body = document.body,
+        html = document.documentElement
+
+      const height = Math.max(
+        body.scrollHeight,
+        body.offsetHeight,
+        html.clientHeight,
+        html.scrollHeight,
+        html.offsetHeight
+      )
+
       const scrollHeight = html.scrollTop
       const percent = ((window.innerHeight + scrollHeight) / height) * 100
       if (processingEl.current) {
         processingEl.current.style.width = percent + '%'
       }
     }
-    scroll()
+
+    setTimeout(() => {
+      scroll()
+    }, 100)
+
     document.addEventListener('scroll', scroll)
 
     return () => {

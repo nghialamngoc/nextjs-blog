@@ -1,0 +1,116 @@
+/* Flex direction */
+@each $value in row, column {
+  .flex-$(value) {
+    flex-direction: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in row, column {
+      .flex-$(screen)-$(value) {
+        flex-direction: $(value);
+      }
+    }
+  }
+}
+
+/* Align items */
+@each $value in start, end, center, baseline {
+  .align-$(value) {
+    align-items: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in start, end, center, baseline {
+      .align-$(screen)-$(value) {
+        align-items: $(value);
+      }
+    }
+  }
+}
+
+/* Justify content */
+@each $value in start, end, center {
+  .justify-$(value) {
+    justify-content: $(value);
+  }
+}
+
+.justify-between {
+  justify-content: space-between;
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in start, end, center, between {
+      .justify-$(screen)-$(value) {
+        justify-content: $(value);
+      }
+    }
+
+    .justify-$(screen)-between {
+      justify-content: space-between;
+    }
+  }
+}
+
+/* Flex grow */
+@each $value in 0, 1 {
+  .grow-$(value) {
+    flex-grow: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in 0, 1 {
+      .grow-$(screen)-$(value) {
+        flex-grow: $(value);
+      }
+    }
+  }
+}
+
+/* Flex shrink */
+@each $value in 0, 1 {
+  .shrink-$(value) {
+    flex-shrink: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in 0, 1 {
+      .shrink-$(screen)-$(value) {
+        flex-shrink: $(value);
+      }
+    }
+  }
+}
+
+/* Order */
+@each $value in 0, 1 {
+  .order-$(value) {
+    order: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in 0, 1 {
+      .order-$(screen)-$(value) {
+        order: $(value);
+      }
+    }
+  }
+}
+
+/* Flex wrap */
+@each $value in wrap, nowrap {
+  .flex-$(value) {
+    flex-wrap: $(value);
+  }
+}

@@ -1,0 +1,33 @@
+.line-through {
+  text-decoration-line: line-through;
+}
+
+.underline {
+  text-decoration-line: underline;
+}
+
+.no-underline {
+  text-decoration-line: none;
+}
+
+@each $value in left, center, right {
+  .text-$(value) {
+    text-align: $(value);
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in left, center, right {
+      .text-$(screen)-$(value) {
+        text-align: $(value);
+      }
+    }
+  }
+}
+
+@each $value in capitalize, lowercase, uppercase {
+  .text-$(value) {
+    text-transform: $(value);
+  }
+}

@@ -1,7 +1,59 @@
-.pr-16 {
-  padding-right: 16px;
+@each $value in auto, 0, 1, 2, 3, 4, 6, 7, 8, 10, 12, 14, 16, 18, 20, 24, 26, 28, 32, 40, 48, 64 {
+  .pt-$(value) {
+    padding-top: $(value)px;
+  }
+
+  .pb-$(value) {
+    padding-bottom: $(value)px;
+  }
+
+  .pl-$(value) {
+    padding-left: $(value)px;
+  }
+
+  .pr-$(value) {
+    padding-right: $(value)px;
+  }
+
+  .px-$(value) {
+    padding-left: $(value)px;
+    padding-right: $(value)px;
+  }
+
+  .py-$(value) {
+    padding-top: $(value)px;
+    padding-bottom: $(value)px;
+  }
 }
 
-.pb-16 {
-  padding-bottom: 16px;
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in auto, 0, 1, 2, 3, 4, 6, 7, 8, 10, 12, 14, 16, 18, 20, 24, 26, 28, 32, 36, 40, 48, 64 {
+      .pt-$(screen)-$(value) {
+        padding-top: $(value)px;
+      }
+    
+      .pb-$(screen)-$(value) {
+        padding-bottom: $(value)px;
+      }
+    
+      .pl-$(screen)-$(value) {
+        padding-left: $(value)px;
+      }
+    
+      .pr-$(screen)-$(value) {
+        padding-right: $(value)px;
+      }
+
+      .px-$(screen)-$(value) {
+        padding-left: $(value)px;
+        padding-right: $(value)px;
+      }
+    
+      .py-$(screen)-$(value) {
+        padding-top: $(value)px;
+        padding-bottom: $(value)px;
+      }
+    }
+  }
 }

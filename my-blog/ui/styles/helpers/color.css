@@ -1,0 +1,31 @@
+.color-unset {
+  color: unset;
+}
+
+@each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light {
+  .color-$(value) {
+    color: var(--color-$(value));
+  }
+
+  .hover-color-$(value):hover {
+    color: var(--color-$(value));
+  }
+
+  .border-$(value) {
+    border-color: var(--color-$(value));
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light {
+      .color-$(screen)-$(value) {
+        color: var(--color-$(value));
+      }
+
+      .border-$(screen)-$(value) {
+        border-color: var(--color-$(value));
+      }
+    }
+  }
+}

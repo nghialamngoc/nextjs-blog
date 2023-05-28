@@ -7,6 +7,15 @@
 @import url('./helpers/margin.css');
 @import url('./helpers/padding.css');
 @import url('./helpers/line-height.css');
+@import url('./helpers/flex.css');
+@import url('./helpers/color.css');
+@import url('./helpers/others.css');
+@import url('./helpers/position.css');
+@import url('./helpers/white-space.css');
+@import url('./helpers/text.css');
+@import url('./helpers/border.css');
+@import url('./helpers/border-radius.css');
+@import url('./helpers/gap.css');
 
 * {
   -webkit-tap-highlight-color: rgb(0 0 0 / 5%);

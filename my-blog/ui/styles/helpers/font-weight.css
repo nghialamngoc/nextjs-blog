@@ -1,81 +1,15 @@
-.weight-normal {
-  font-weight: var(--font-weight-normal);
-}
-
-.weight-medium {
-  font-weight: var(--font-weight-medium);
-}
-
-.weight-bold {
-  font-weight: var(--font-weight-bold);
-}
-
-@mixin media xs {
-  .weight-xs-normal {
-    font-weight: var(--font-weight-normal);
-  }
-  
-  .weight-xs-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  
-  .weight-xs-bold {
-    font-weight: var(--font-weight-bold);
+@each $value in normal, medium, bold {
+  .weight-$(value) {
+    font-weight: var(--font-weight-$(value));
   }
 }
 
-@mixin media sm {
-  .weight-sm-normal {
-    font-weight: var(--font-weight-normal);
-  }
-  
-  .weight-sm-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  
-  .weight-sm-bold {
-    font-weight: var(--font-weight-bold);
-  }
-}
-
-@mixin media md {
-  .weight-md-normal {
-    font-weight: var(--font-weight-normal);
-  }
-  
-  .weight-md-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  
-  .weight-md-bold {
-    font-weight: var(--font-weight-bold);
-  }
-}
-
-@mixin media lg {
-  .weight-lg-normal {
-    font-weight: var(--font-weight-normal);
-  }
-  
-  .weight-lg-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  
-  .weight-lg-bold {
-    font-weight: var(--font-weight-bold);
-  }
-}
-
-@mixin media xl {
-  .weight-xl-normal {
-    font-weight: var(--font-weight-normal);
-  }
-  
-  .weight-xl-medium {
-    font-weight: var(--font-weight-medium);
-  }
-  
-  .weight-xl-bold {
-    font-weight: var(--font-weight-bold);
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in normal, medium, bold {
+      .weight-$(screen)-$(value) {
+        font-weight: var(--font-weight-$(value));
+      }
+    }
   }
 }
