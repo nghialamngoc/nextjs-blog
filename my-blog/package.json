@@ -34,7 +34,6 @@
   "resolutions": {
     "@storybook/react-docgen-typescript-plugin": "1.0.6--canary.9.cd77847.0",
     "postcss": "8"
-
   },
   "devDependencies": {
     "@babel/core": "^7.21.4",

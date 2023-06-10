@@ -10,14 +10,17 @@ export const readFileMarkdown = async (pathFile: string) => {
   const fileContents = fs.readFileSync(pathFile, 'utf8')
 
   const matterResult = matter(fileContents)
-  const { data, content } = matter(matterResult)
-  const { id = '', title = '', description = '', categories = [] } = data
+
+  const { data, content } = matterResult
+  const { id = '', title = '', description = '', categories = [], createDate = '', onThisPage = [] } = data
 
   const postDetail: PostDetailProps = {
     id,
     title,
     categories,
     description,
+    createDate,
+    onThisPage,
     mdxSource: await serialize(content || ''),
   }
 

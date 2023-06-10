@@ -33,7 +33,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
     // with a fresh value. If you refresh the page, you will see the new value.
     context.res.setHeader('Cache-Control', 'public, s-maxage=10, stale-while-revalidate=59')
 
-    // Everything okay, let's go
+    // Everything okay, let's go`
     return {
       props: {
         moduleData,
