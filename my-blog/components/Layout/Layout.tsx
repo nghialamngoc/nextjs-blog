@@ -46,7 +46,7 @@ export const Layout: FC<LayoutProps> = (props) => {
             {withFontSelection && (
               <SelectFontSize activeIndex={activeIndex} options={FONT_SIZE_OPTIONS} onClick={onChange} />
             )}
-            {withDarkModeToggle && (
+            {false && (
               <DarkModeToggle
                 value={darkMode}
                 onChange={(value) => {

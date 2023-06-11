@@ -1,5 +1,7 @@
+import { DEFAULT_LOCALE } from '@/config/common'
 import { ModuleAtom } from '@/hooks/module'
 import { PostIdsMapping } from '@/post-files'
+import { getPostList } from '@/services/server-side/post-list'
 import { readFileMarkdown } from '@/utils/read-file-mardown'
 import { GetServerSidePropsContext } from 'next'
 import path from 'path'
@@ -7,6 +9,7 @@ import path from 'path'
 const handler = (props: ModuleAtom) => {
   return async (context: GetServerSidePropsContext) => {
     const { moduleSubPath } = props
+    const { locale = DEFAULT_LOCALE } = context
 
     if (moduleSubPath) {
       const postSlug = moduleSubPath?.split('/')[0]
@@ -21,7 +24,6 @@ const handler = (props: ModuleAtom) => {
             props: fileData,
           }
         } catch (err) {
-          console.log('[dev Sharing] [error]: ', err)
           return {
             notFound: true,
           }
@@ -31,10 +33,20 @@ const handler = (props: ModuleAtom) => {
           notFound: true,
         }
       }
-    }
+    } else {
+      try {
+        const postList = await getPostList(locale)
 
-    return {
-      props: {},
+        return {
+          props: {
+            postList,
+          },
+        }
+      } catch (err) {
+        return {
+          notFound: true,
+        }
+      }
     }
   }
 }
