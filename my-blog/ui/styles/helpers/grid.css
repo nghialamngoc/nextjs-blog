@@ -1,0 +1,15 @@
+@each $value in 1, 2, 3, 4, 5, 6 {
+  .grid-$(value) {
+    grid-template-columns: repeat($(value), minmax(0px, 1fr));
+  }
+}
+
+@each $screen in xs, sm, md, lg, xl {
+  @mixin media $screen {
+    @each $value in 1, 2, 3, 4, 5, 6 {
+      .grid-$(screen)-$(value) {
+        grid-template-columns: repeat($(value), minmax(0px, 1fr));
+      }
+    }
+  }
+}

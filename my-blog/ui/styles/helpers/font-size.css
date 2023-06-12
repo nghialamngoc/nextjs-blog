@@ -1,4 +1,4 @@
-@each $value in 8, 10, 12, 14, 16, 20, 24, 25, 26, 28, 31, 32, 35, 38, 39, 40, 48 {
+@each $value in 8, 10, 12, 14, 16, 18, 20, 24, 25, 26, 28, 31, 32, 35, 38, 39, 40, 48 {
   .size-$(value) {
     font-size: $(value)px;
   }
@@ -6,7 +6,7 @@
 
 @each $screen in xs, sm, md, lg, xl {
   @mixin media $screen {
-    @each $value in 8, 10, 12, 14, 16, 20, 24, 25, 26, 28, 31, 32, 35, 38, 39, 40, 48 {
+    @each $value in 8, 10, 12, 14, 16, 18, 20, 24, 25, 26, 28, 31, 32, 35, 38, 39, 40, 48 {
       .size-$(screen)-$(value) {
         font-size: $(value)px;
       }

@@ -16,6 +16,7 @@
 @import url('./helpers/border.css');
 @import url('./helpers/border-radius.css');
 @import url('./helpers/gap.css');
+@import url('./helpers/grid.css');
 
 * {
   -webkit-tap-highlight-color: rgb(0 0 0 / 5%);
@@ -35,7 +36,7 @@ body {
 }
 
 a {
-  color: var(--color-primary);
+  text-decoration: none;
 }
 
 /* Customize scrollbar */

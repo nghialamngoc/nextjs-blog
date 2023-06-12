@@ -37,3 +37,7 @@
 .hide {
   visibility: hidden;
 }
+
+.pointer {
+  cursor: pointer;
+}
