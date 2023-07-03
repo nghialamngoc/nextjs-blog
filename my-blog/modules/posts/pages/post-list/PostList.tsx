@@ -1,9 +1,10 @@
 import { HOME_PATH } from '@/config/env'
+import Loading from '@/ui/atoms/Loading'
 import { cx } from '@/utils/cx'
-import { formatDate, isFutureDateString } from '@/utils/date'
+import { formatDate } from '@/utils/date'
 import { goto } from '@/utils/url'
-import Link from 'next/link'
-import { FC } from 'react'
+import { FC, useState } from 'react'
+import { InView } from 'react-intersection-observer'
 
 import styles from './PostList.module.css'
 
@@ -21,11 +22,14 @@ export interface PostListItem {
 }
 
 export const PostList: FC<PostListProps> = ({ postList }) => {
+  const [page, setPage] = useState(0)
+  const [loading, setLoading] = useState(false)
+
   return (
-    <div>
+    <div className="pb-64">
       <div className="size-32 mb-32 weight-medium">Post List</div>
       <section className="d-grid grid-lg-3 gap-20">
-        {postList?.map((x, index) => {
+        {postList?.slice(0, (page + 1) * 6)?.map((x, index) => {
           return (
             <article key={index} className="border-1 round-16 px-16 py-16 border-primary">
               <div
@@ -44,6 +48,24 @@ export const PostList: FC<PostListProps> = ({ postList }) => {
           )
         })}
       </section>
+
+      <InView
+        as="div"
+        onChange={(inView) => {
+          console.log('here')
+
+          setLoading(inView)
+          setTimeout(() => {
+            inView && setPage(page + 1)
+          }, 2000)
+        }}
+      ></InView>
+
+      {loading && postList.length > postList?.slice(0, (page + 1) * 6).length && (
+        <div className="d-flex align-center justify-center w-full py-8">
+          <Loading />
+        </div>
+      )}
     </div>
   )
 }

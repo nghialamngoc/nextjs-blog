@@ -3,6 +3,7 @@ import { ModuleAtom } from '@/hooks/module'
 import { PostIdsMapping } from '@/post-files'
 import { getPostList } from '@/services/server-side/post-list'
 import { readFileMarkdown } from '@/utils/read-file-mardown'
+import { error } from '@/utils/safety-log'
 import { GetServerSidePropsContext } from 'next'
 import path from 'path'
 
@@ -35,7 +36,7 @@ const handler = (props: ModuleAtom) => {
       }
     } else {
       try {
-        const postList = await getPostList(locale)
+        const postList = (await getPostList(locale)) ?? []
 
         return {
           props: {
@@ -43,6 +44,7 @@ const handler = (props: ModuleAtom) => {
           },
         }
       } catch (err) {
+        error('get post list data failed', err)
         return {
           notFound: true,
         }
