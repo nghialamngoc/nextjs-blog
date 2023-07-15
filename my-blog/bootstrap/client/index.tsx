@@ -15,6 +15,7 @@ const ModuleComponents = {
   [ModuleType.HOME]: dynamic(() => import('../../modules/home/bootstrap/client')),
   [ModuleType.ABOUT]: dynamic(() => import('../../modules/about/bootstrap/client')),
   [ModuleType.POSTS]: dynamic(() => import('../../modules/posts/bootstrap/client')),
+  [ModuleType.ENGLISH]: dynamic(() => import('../../modules/english/bootstrap/client')),
 }
 
 const logStyles = 'color: red; font-weight: bold; font-size: 12px;'

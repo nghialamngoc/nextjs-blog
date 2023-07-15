@@ -2,9 +2,13 @@
   color: unset;
 }
 
-@each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light {
+@each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue {
   .color-$(value) {
     color: var(--color-$(value));
+  }
+
+  .bg-color-$(value) {
+    background-color: var(--color-$(value));
   }
 
   .hover-color-$(value):hover {
@@ -18,9 +22,13 @@
 
 @each $screen in xs, sm, md, lg, xl {
   @mixin media $screen {
-    @each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light {
+    @each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue {
       .color-$(screen)-$(value) {
         color: var(--color-$(value));
+      }
+
+      .bg-color-$(screen)-$(value) {
+        background-color: var(--color-$(value));
       }
 
       .border-$(screen)-$(value) {

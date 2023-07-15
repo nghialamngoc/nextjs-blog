@@ -1,0 +1,82 @@
+[
+  {
+    "uid": "1",
+    "word": "head",
+    "mean": "đầu",
+    "pronounce": "/hed/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "2",
+    "word": "mouth",
+    "mean": "miệng",
+    "pronounce": "/mauθ/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "3",
+    "word": "eye",
+    "mean": "mắt",
+    "pronounce": "/ai/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "4",
+    "word": "ear",
+    "mean": "tai",
+    "pronounce": "/iə/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "5",
+    "word": "leg",
+    "mean": "chân (người, con vật, bàn ghế…)",
+    "pronounce": "/leg/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "6",
+    "word": "neck",
+    "mean": "cổ",
+    "pronounce": "/nek/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "7",
+    "word": "chin",
+    "mean": "cằm",
+    "pronounce": "/'t∫in/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "8",
+    "word": "arm",
+    "mean": "cánh tay",
+    "pronounce": "/ɑ:m/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "9",
+    "word": "shoulder",
+    "mean": "vai",
+    "pronounce": "/∫əʊldə[r]/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "10",
+    "word": "hair",
+    "mean": "sợi tóc, mái tóc; lông, bộ lông (thú vật)",
+    "pronounce": "/heə[r]/",
+    "category": ["body"],
+    "type": "noun"
+  }
+]

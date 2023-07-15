@@ -41,3 +41,15 @@
 .pointer {
   cursor: pointer;
 }
+
+.image-100 {
+  width: 100% !important;
+  height: 100% !important;
+}
+
+.absolute-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}

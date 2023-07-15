@@ -2,12 +2,14 @@ export enum ModuleType {
   HOME = 'home',
   ABOUT = 'about',
   POSTS = 'posts',
+  ENGLISH = 'english',
 }
 
 export enum ModuleId {
   HOME = 'home',
   ABOUT = 'about',
   POSTS = 'posts',
+  ENGLISH = 'english',
 }
 
 export interface ModuleInfo {
@@ -35,6 +37,12 @@ export const MODULES: ModuleInfo[] = [
     id: ModuleId.POSTS,
     path: 'posts',
     type: ModuleType.POSTS,
+    configUid: '',
+  },
+  {
+    id: ModuleId.ENGLISH,
+    path: 'english',
+    type: ModuleType.ENGLISH,
     configUid: '',
   },
 ]

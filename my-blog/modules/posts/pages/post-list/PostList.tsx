@@ -52,8 +52,6 @@ export const PostList: FC<PostListProps> = ({ postList }) => {
       <InView
         as="div"
         onChange={(inView) => {
-          console.log('here')
-
           setLoading(inView)
           setTimeout(() => {
             inView && setPage(page + 1)
