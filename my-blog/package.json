@@ -12,6 +12,7 @@
   },
   "dependencies": {
     "@codesandbox/sandpack-react": "^2.6.1",
+    "@ebay/nice-modal-react": "^1.2.10",
     "@mdx-js/loader": "^2.3.0",
     "@mdx-js/react": "^2.3.0",
     "@next/mdx": "^13.3.4",

@@ -1,44 +1,59 @@
 import { cx } from '@/utils/cx'
+import NiceModal from '@ebay/nice-modal-react'
 import Image from 'next/image'
+import { FC, useState } from 'react'
+import { VocabubaryCheckConfirm } from '../../components/Modals/VocabularyCheckConfirm'
+import TopicList from '../../components/TopicList'
 import BodyThum from '../../public/body-thumb.jpg'
 import styles from './VocabularyCheck.module.css'
 
 const topicList = [
   {
     title: 'Body',
+    type: 'body',
     thumb: BodyThum,
     color: '',
   },
 ]
 
-export const VocabubaryCheck = () => {
+export interface VocabubaryCheckProps {
+  topicData: Record<string, Array<IVocabulary>>
+}
+
+export interface IVocabulary {
+  uid?: string
+  word?: string
+  mean?: string
+  pronounce?: string
+  category?: Array<string>
+  type?: string
+}
+
+export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
+  const [loading, setLoading] = useState(false)
+  const [isCheck, setIsCheck] = useState(false)
+  const [selectTopic, setSelectTopic] = useState('')
+
+  const onTopicCheck = () => {
+    setIsCheck(true)
+  }
+
+  const onTopicClick = (topic: string) => {
+    if (topicData[topic].length > 0) {
+      setSelectTopic(topic)
+      NiceModal.show(VocabubaryCheckConfirm, {
+        totalWords: topicData[topic].length,
+        description: `We have total ${topicData[topic].length} words and you have ${topicData[topic].length} mins for this examination.`,
+        onSubmit: onTopicCheck,
+      })
+    }
+  }
+
   return (
     <div>
       <div className="size-32 mb-32 weight-medium">Vocabulary Check</div>
       <div className="size-24 mb-32">Topics</div>
-      <section className="d-grid grid-lg-3 gap-20">
-        {topicList.map((x, index) => {
-          return (
-            <div
-              className={cx('relative round-8 clickable', styles.item)}
-              key={index}
-              style={{
-                animationDuration: (index + 1) * 0.3 + 's',
-              }}
-            >
-              <div
-                className={cx(
-                  styles.title,
-                  'absolute-center size-28 weight-bold color-blue bg-color-blue-light px-10 py-2 round-8'
-                )}
-              >
-                {x.title}
-              </div>
-              <Image className="image-100 round-8" src={BodyThum} alt="topic-thumb"></Image>
-            </div>
-          )
-        })}
-      </section>
+      <TopicList topicData={topicData} topicList={topicList} onClick={onTopicClick}></TopicList>
     </div>
   )
 }

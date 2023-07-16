@@ -1,0 +1,8 @@
+export * from './Dialog'
+export * from './DialogOverlay'
+export * from './DialogContent'
+export * from './DialogCloseButton'
+export * from './DialogBody'
+export * from './DialogFooter'
+export * from './DialogHeader'
+export { Dialog as default } from './Dialog'

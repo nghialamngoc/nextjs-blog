@@ -1,0 +1,24 @@
+.item:hover img {
+  transform: scale(1.02);
+  transition: all 0.3s;
+}
+
+.item div {
+  z-index: 99;
+}
+
+.item {
+  animation: animation-left;
+}
+
+@keyframes animation-left {
+  0% {
+    left: -300px;
+    opacity: 0;
+  }
+
+  100% {
+    left: 0;
+    opacity: 1;
+  }
+}

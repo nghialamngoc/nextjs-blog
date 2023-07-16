@@ -1,0 +1,28 @@
+.closeBtn {
+  position: fixed;
+  right: 1rem;
+  top: 1rem;
+  border: 0;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  padding: 0;
+  color: var(--color-text);
+  background-color: var(--color-white);
+  z-index: var(--zIndex-floating);
+  box-shadow: var(--shadow-md);
+}
+
+.closeBtn:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.closeBtn > svg {
+  width: 16px;
+  height: 16px;
+}

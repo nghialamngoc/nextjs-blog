@@ -1,5 +1,6 @@
 import { GetServerSidePropsContext } from 'next'
 import { ModuleAtom } from '@/hooks/module'
+import { getTopicList } from '@/services/server-side/topic'
 
 const validSubPath = ['vocabulary-check', 'grammar']
 
@@ -11,6 +12,16 @@ const handler = (props: ModuleAtom) => {
       return {
         props: {},
         notFound: true,
+      }
+    }
+
+    if (moduleSubPath === validSubPath[0]) {
+      const topicData = await getTopicList()
+
+      return {
+        props: {
+          topicData: topicData ?? {},
+        },
       }
     }
 

@@ -27,6 +27,20 @@ module.exports = {
 
           return {}
         },
+
+        'media-max': (mixin, breakpoint) => {
+          const bp = breakpoints[breakpoint]
+
+          if (bp) {
+            return {
+              ['@media screen and (max-width: ' + bp + ')']: {
+                '@mixin-content': {},
+              },
+            }
+          }
+
+          return {}
+        },
       },
     },
     'postcss-each': {},

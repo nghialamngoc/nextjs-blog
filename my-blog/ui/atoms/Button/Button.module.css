@@ -1,0 +1,266 @@
+.root {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 4px;
+  cursor: pointer;
+  border: none;
+  overflow: hidden;
+  position: relative;
+  user-select: none;
+  font-weight: var(--font-weight-bold);
+  text-decoration: none;
+  text-align: left;
+  transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.root>span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.root:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-outline);
+}
+
+.root:disabled,
+.root[data-disabled="true"] {
+  cursor: default;
+  opacity: 0.65;
+}
+
+.root>span>svg {
+  flex-shrink: 0;
+}
+
+.root[data-readonly="true"] {
+  pointer-events: none;
+}
+
+/* Loading */
+@keyframes spinAround {
+  from {
+    transform: rotate(0deg);
+  }
+
+  to {
+    transform: rotate(359deg);
+  }
+}
+
+.root[data-loading="true"] {
+  pointer-events: none;
+}
+
+.root[data-loading="true"]>span {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.root[data-loading="true"]::after {
+  content: "";
+  position: absolute;
+  border: 3px solid;
+  border-radius: 9999px;
+  border-color: currentColor;
+  border-right-color: transparent;
+  border-top-color: transparent;
+  animation: spinAround .5s infinite linear;
+}
+
+/* Text size */
+.root[data-text-size="sm"] {
+  font-size: 14px;
+}
+
+.root[data-text-size="md"] {
+  font-size: 16px;
+}
+
+.root[data-text-size="lg"] {
+  font-size: 20px;
+}
+
+/* Size: sm */
+.root[data-size="sm"] {
+  padding: 6px 16px;
+}
+
+.root[data-size="sm"]>span {
+  gap: 4px;
+}
+
+.root[data-size="sm"][data-loading="true"]::after {
+  width: 16px;
+  height: 16px;
+}
+
+/* Size: md */
+.root[data-size="md"] {
+  padding: 12px 24px;
+}
+
+.root[data-size="md"]>span {
+  gap: 8px;
+}
+
+.root[data-size="md"][data-loading="true"]::after {
+  width: 20px;
+  height: 20px;
+}
+
+/* Align items */
+.root[data-align-items="flex-start"],
+.root[data-align-items="flex-start"] > span {
+  align-items: flex-start;
+}
+
+.root[data-align-items="flex-end"],
+.root[data-align-items="flex-end"] > span {
+  align-items: flex-end;
+}
+
+.root[data-align-items="center"],
+.root[data-align-items="center"] > span {
+  align-items: center;
+}
+
+/* Justify */
+.root[data-justify="flex-start"],
+.root[data-justify="flex-start"] > span {
+  justify-content: flex-start;
+}
+
+.root[data-justify="flex-end"],
+.root[data-justify="flex-end"] > span {
+  justify-content: flex-end;
+}
+
+.root[data-justify="center"],
+.root[data-justify="center"] > span {
+  justify-content: center;
+}
+
+/* Variant: primary */
+.root[data-variant="primary"] {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.root[data-variant="primary"]:not(:disabled):hover,
+.root[data-variant="primary"]:not([data-disabled="true"]):hover {
+  color: var(--color-primary);
+  background-color: var(--color-white);
+  box-shadow: var(--shadow-md);
+}
+
+/* Variant: secondary */
+.root[data-variant="secondary"] {
+  border: 2px solid;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: var(--color-white);
+}
+
+.root[data-variant="secondary"]:not(:disabled):hover,
+.root[data-variant="secondary"]:not([data-disabled="true"]):hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+  box-shadow: var(--shadow-md);
+}
+
+.root[data-variant="secondary"][data-size="sm"] {
+  padding: 4px 16px;
+}
+
+.root[data-variant="secondary"][data-size="md"] {
+  padding: 11px 24px;
+}
+
+/* Variant: outline */
+.root[data-variant="outline"] {
+  border: 2px solid;
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.root[data-variant="outline"]:not(:disabled):hover,
+.root[data-variant="outline"]:not([data-disabled="true"]):hover {
+  color: var(--color-white);
+  background-color: var(--color-primary);
+}
+
+.root[data-variant="outline"][data-size="sm"] {
+  padding: 4px 16px;
+}
+
+.root[data-variant="outline"][data-size="md"] {
+  padding: 11px 24px;
+}
+
+/* Variant: ghost */
+.root[data-variant="ghost"] {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.root[data-variant="ghost"][data-size="sm"] {
+  padding: 4px 0;
+}
+
+.root[data-variant="ghost"][data-size="md"] {
+  padding: 8px 0;
+}
+
+/* Variant: link */
+.root[data-variant="link"] {
+  color: var(--color-primary);
+  background-color: transparent;
+}
+
+.root[data-variant="link"]:not(:disabled):hover,
+.root[data-variant="link"]:not([data-disabled="true"]):hover {
+  background-color: var(--color-primary-alpha-20);
+}
+
+.root[data-variant="link"][data-size="sm"] {
+  padding: 4px 8px;
+}
+
+.root[data-variant="link"][data-size="md"] {
+  padding: 10px 8px;
+}
+
+/* Variant: text */
+.root[data-variant="text"] {
+  color: var(--color-black);
+  background-color: transparent;
+}
+
+.root[data-variant="text"]:not(:disabled):hover,
+.root[data-variant="text"]:not([data-disabled="true"]):hover {
+  background-color: var(--color-primary-alpha-20);
+}
+
+.root[data-variant="text"]>span>svg {
+  color: var(--color-primary);
+}
+
+.root[data-variant="text"][data-size="sm"] {
+  padding: 4px;
+}
+
+.root[data-variant="text"][data-size="md"] {
+  padding: 10px 8px;
+}
+
+/* Variant: icon */
+.root[data-variant="icon"] {
+  overflow: visible;
+  padding: 0;
+  color: var(--color-primary);
+  background-color: transparent;
+}

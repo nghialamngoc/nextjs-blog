@@ -1,0 +1,19 @@
+.body {
+
+}
+
+.modal {
+  background-color: white;
+}
+
+@mixin media-max sm {
+  .modal {
+    width: 312px;
+  }
+}
+
+@mixin media sm, md {
+  .modal {
+    width: 600px;
+  }
+}
