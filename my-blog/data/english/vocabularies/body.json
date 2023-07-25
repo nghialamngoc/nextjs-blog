@@ -78,5 +78,77 @@
     "pronounce": "/heə[r]/",
     "category": ["body"],
     "type": "noun"
+  },
+  {
+    "uid": "11",
+    "word": "nostril",
+    "mean": "lỗ mũi",
+    "pronounce": "/'nɒstrəl/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "12",
+    "word": "cheek",
+    "mean": "má",
+    "pronounce": "/t∫i:k/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "13",
+    "word": "teeth",
+    "mean": "răng",
+    "pronounce": "/ti:θ/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "14",
+    "word": "tongue",
+    "mean": "cái lưỡi",
+    "pronounce": "/tʌŋ/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "15",
+    "word": "back",
+    "mean": "cái lưng",
+    "pronounce": "/bæk/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "16",
+    "word": "buttock",
+    "mean": "cái mông",
+    "pronounce": "/'bʌtək/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "17",
+    "word": "hip",
+    "mean": "eo",
+    "pronounce": "/hip/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "18",
+    "word": "lip",
+    "mean": "môi",
+    "pronounce": "/lip/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "19",
+    "word": "calf",
+    "mean": "bắp chân",
+    "pronounce": "/kæf/",
+    "category": ["body"],
+    "type": "noun"
   }
 ]

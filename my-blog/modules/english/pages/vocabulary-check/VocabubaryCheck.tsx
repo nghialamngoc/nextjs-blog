@@ -1,8 +1,9 @@
 import { cx } from '@/utils/cx'
 import NiceModal from '@ebay/nice-modal-react'
 import Image from 'next/image'
-import { FC, useState } from 'react'
+import { FC, useMemo, useState } from 'react'
 import { VocabubaryCheckConfirm } from '../../components/Modals/VocabularyCheckConfirm'
+import TopicCheck from '../../components/TopicCheck'
 import TopicList from '../../components/TopicList'
 import BodyThum from '../../public/body-thumb.jpg'
 import styles from './VocabularyCheck.module.css'
@@ -32,7 +33,11 @@ export interface IVocabulary {
 export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
   const [loading, setLoading] = useState(false)
   const [isCheck, setIsCheck] = useState(false)
-  const [selectTopic, setSelectTopic] = useState('')
+  const [selectedTopic, setSelectedTopic] = useState('')
+
+  const selectedVocabulary = useMemo(() => {
+    return topicData[selectedTopic]
+  }, [selectedTopic, topicData])
 
   const onTopicCheck = () => {
     setIsCheck(true)
@@ -40,7 +45,7 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
 
   const onTopicClick = (topic: string) => {
     if (topicData[topic].length > 0) {
-      setSelectTopic(topic)
+      setSelectedTopic(topic)
       NiceModal.show(VocabubaryCheckConfirm, {
         totalWords: topicData[topic].length,
         description: `We have total ${topicData[topic].length} words and you have ${topicData[topic].length} mins for this examination.`,
@@ -53,7 +58,11 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
     <div>
       <div className="size-32 mb-32 weight-medium">Vocabulary Check</div>
       <div className="size-24 mb-32">Topics</div>
-      <TopicList topicData={topicData} topicList={topicList} onClick={onTopicClick}></TopicList>
+      {isCheck ? (
+        <TopicCheck topic={selectedTopic} vocabularies={selectedVocabulary} />
+      ) : (
+        <TopicList topicData={topicData} topicList={topicList} onClick={onTopicClick}></TopicList>
+      )}
     </div>
   )
 }

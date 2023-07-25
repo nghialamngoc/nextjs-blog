@@ -42,7 +42,14 @@ export const VocabubaryCheckConfirm = NiceModal.create<VocabubaryCheckConfirmPro
           <Button className="w-full w-md-200" type="button" variant="secondary" onClick={onHide}>
             Not yet
           </Button>
-          <Button className="w-full w-md-200" form="form" onClick={onSubmit}>
+          <Button
+            className="w-full w-md-200"
+            form="form"
+            onClick={() => {
+              modal.hide()
+              onSubmit?.()
+            }}
+          >
             Let&apos;s go
           </Button>
         </DialogFooter>
