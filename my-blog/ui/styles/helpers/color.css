@@ -2,7 +2,7 @@
   color: unset;
 }
 
-@each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue {
+@each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue, error, green {
   .color-$(value) {
     color: var(--color-$(value));
   }
@@ -22,7 +22,7 @@
 
 @each $screen in xs, sm, md, lg, xl {
   @mixin media $screen {
-    @each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue {
+    @each $value in transparent, white, primary, primary-light, primary-dark, primary-lighter, secondary, text, text-lighter, grey, grey-dark, grey-darker, green, green-light, blue-light, blue, error, green {
       .color-$(screen)-$(value) {
         color: var(--color-$(value));
       }

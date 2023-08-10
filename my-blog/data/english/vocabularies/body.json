@@ -97,9 +97,9 @@
   },
   {
     "uid": "13",
-    "word": "teeth",
+    "word": "tooth",
     "mean": "răng",
-    "pronounce": "/ti:θ/",
+    "pronounce": "/tu:θ/",
     "category": ["body"],
     "type": "noun"
   },
@@ -148,6 +148,174 @@
     "word": "calf",
     "mean": "bắp chân",
     "pronounce": "/kæf/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": "20",
+    "word": "armpit",
+    "mean": "nách",
+    "pronounce": "/'ɑ:mpitkæf/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 21,
+    "word": "abdomen",
+    "mean": "bụng",
+    "pronounce": "/'æbdəmen/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 22,
+    "word": "brain",
+    "mean": "não",
+    "pronounce": "/brein/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 23,
+    "word": "blood",
+    "mean": "máu",
+    "pronounce": "/blʌd/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 24,
+    "word": "elbow",
+    "mean": "khuỷu tay",
+    "pronounce": "/elbou/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 25,
+    "word": "eyebrow",
+    "mean": "lông mày",
+    "pronounce": "/'aibrau/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 26,
+    "word": "eyelashes",
+    "mean": "lông mi",
+    "pronounce": "//",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 27,
+    "word": "heart",
+    "mean": "trái tim",
+    "pronounce": "/hɑ:t/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 28,
+    "word": "hand",
+    "mean": "tay",
+    "pronounce": "/hænd/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 29,
+    "word": "toe",
+    "mean": "ngón chân",
+    "pronounce": "/tou/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 30,
+    "word": "liver",
+    "mean": "gan",
+    "pronounce": "/'livə/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 31,
+    "word": "knee",
+    "mean": "đầu gối",
+    "pronounce": "/ni:/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 32,
+    "word": "nose",
+    "mean": "mũi",
+    "pronounce": "/nouz/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 33,
+    "word": "chest",
+    "mean": "ngực",
+    "pronounce": "/t∫est/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 34,
+    "word": "tear",
+    "mean": "nước mắt",
+    "pronounce": "/tiə/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 35,
+    "word": "saliva",
+    "mean": "nước bọt",
+    "pronounce": "/sə'laivə/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 36,
+    "word": "sweat",
+    "mean": "mồ hôi",
+    "pronounce": "/swet/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 37,
+    "word": "wrist",
+    "mean": "cổ tay",
+    "pronounce": "/rist/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 38,
+    "word": "forehead",
+    "mean": "trán",
+    "pronounce": "/'fɔ:hed/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 39,
+    "word": "urine",
+    "mean": "nước tiểu",
+    "pronounce": "/'juərin/",
+    "category": ["body"],
+    "type": "noun"
+  },
+  {
+    "uid": 40,
+    "word": "stomach",
+    "mean": "dạ dày",
+    "pronounce": "/'stʌmək/",
     "category": ["body"],
     "type": "noun"
   }

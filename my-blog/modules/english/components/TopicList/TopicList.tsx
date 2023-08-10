@@ -30,7 +30,7 @@ export const TopicList: FC<TopicListProps> = ({ topicList, topicData, onClick })
               >
                 {x.title}
               </div>
-              <Image className="image-100 round-8" src={BodyThum} alt="topic-thumb"></Image>
+              <Image className="image-100 round-8" src={BodyThum} alt="topic-thumb" priority></Image>
             </div>
             <div className="mt-10 d-flex gap-8 flex-column size-14">
               <div>Total Words: {topicData[x.type]?.length}</div>

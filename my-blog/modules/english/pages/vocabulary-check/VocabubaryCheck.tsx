@@ -1,3 +1,4 @@
+import { shuffle } from '@/utils/array'
 import { cx } from '@/utils/cx'
 import NiceModal from '@ebay/nice-modal-react'
 import Image from 'next/image'
@@ -36,7 +37,7 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
   const [selectedTopic, setSelectedTopic] = useState('')
 
   const selectedVocabulary = useMemo(() => {
-    return topicData[selectedTopic]
+    return topicData[selectedTopic] ? shuffle(topicData[selectedTopic]) : []
   }, [selectedTopic, topicData])
 
   const onTopicCheck = () => {
@@ -44,7 +45,7 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
   }
 
   const onTopicClick = (topic: string) => {
-    if (topicData[topic].length > 0) {
+    if (topicData[topic]?.length > 0) {
       setSelectedTopic(topic)
       NiceModal.show(VocabubaryCheckConfirm, {
         totalWords: topicData[topic].length,
@@ -54,12 +55,17 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
     }
   }
 
+  const onCheckFinish = () => {
+    setIsCheck(false)
+    setSelectedTopic('')
+  }
+
   return (
     <div>
       <div className="size-32 mb-32 weight-medium">Vocabulary Check</div>
       <div className="size-24 mb-32">Topics</div>
       {isCheck ? (
-        <TopicCheck topic={selectedTopic} vocabularies={selectedVocabulary} />
+        <TopicCheck topic={selectedTopic} vocabularies={selectedVocabulary} onCheckFinish={onCheckFinish} />
       ) : (
         <TopicList topicData={topicData} topicList={topicList} onClick={onTopicClick}></TopicList>
       )}
