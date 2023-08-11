@@ -2,7 +2,6 @@ import { cx } from '@/utils/cx'
 import Image from 'next/image'
 import { FC } from 'react'
 import { IVocabulary } from '../../pages/vocabulary-check'
-import BodyThum from '../../public/body-thumb.jpg'
 import styles from './TopicList.module.css'
 
 export interface TopicListProps {
@@ -12,7 +11,7 @@ export interface TopicListProps {
 }
 export const TopicList: FC<TopicListProps> = ({ topicList, topicData, onClick }) => {
   return (
-    <section className="d-grid grid-lg-3 gap-20">
+    <section className="d-grid grid-lg-3 gap-32">
       {topicList.map((x, index) => {
         return (
           <div key={index} className={cx('round-8 clickable', styles.item)} onClick={() => onClick?.(x.type || '')}>
@@ -30,7 +29,7 @@ export const TopicList: FC<TopicListProps> = ({ topicList, topicData, onClick })
               >
                 {x.title}
               </div>
-              <Image className="image-100 round-8" src={BodyThum} alt="topic-thumb" priority></Image>
+              <Image className="image-100 round-8" src={x.thumb} alt="topic-thumb" priority></Image>
             </div>
             <div className="mt-10 d-flex gap-8 flex-column size-14">
               <div>Total Words: {topicData[x.type]?.length}</div>

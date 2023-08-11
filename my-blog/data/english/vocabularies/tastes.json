@@ -1,0 +1,42 @@
+[
+  {
+    "uid": "1",
+    "word": "sour",
+    "mean": "chua",
+    "pronounce": "/saʊr/",
+    "category": ["tastes"],
+    "type": "adj"
+  },
+  {
+    "uid": "2",
+    "word": "sweet",
+    "mean": "ngọt",
+    "pronounce": "/swiːt/",
+    "category": ["tastes"],
+    "type": "adj"
+  },
+  {
+    "uid": "3",
+    "word": "salty",
+    "mean": "mặn",
+    "pronounce": "/ˈsɒl.ti/",
+    "category": ["tastes"],
+    "type": "noun"
+  },
+  {
+    "uid": "4",
+    "word": "bitter",
+    "mean": "đắng",
+    "pronounce": "/ˈbɪt̬.ɚ/",
+    "category": ["tastes"],
+    "type": "adj"
+  },
+  {
+    "uid": "5",
+    "word": "spicy",
+    "mean": "cay",
+    "pronounce": "/ˈspaɪ.si/",
+    "category": ["tastes"],
+    "type": "adj"
+  }
+]

@@ -1,19 +1,24 @@
 import { shuffle } from '@/utils/array'
-import { cx } from '@/utils/cx'
 import NiceModal from '@ebay/nice-modal-react'
-import Image from 'next/image'
 import { FC, useMemo, useState } from 'react'
 import { VocabubaryCheckConfirm } from '../../components/Modals/VocabularyCheckConfirm'
 import TopicCheck from '../../components/TopicCheck'
 import TopicList from '../../components/TopicList'
-import BodyThum from '../../public/body-thumb.jpg'
+import BodyThumb from '../../public/body-thumb.jpg'
+import TastesThumb from '../../public/tastes-thumb.png'
 import styles from './VocabularyCheck.module.css'
 
 const topicList = [
   {
     title: 'Body',
     type: 'body',
-    thumb: BodyThum,
+    thumb: BodyThumb,
+    color: '',
+  },
+  {
+    title: 'Tastes',
+    type: 'tastes',
+    thumb: TastesThumb,
     color: '',
   },
 ]
@@ -35,6 +40,8 @@ export const VocabubaryCheck: FC<VocabubaryCheckProps> = ({ topicData }) => {
   const [loading, setLoading] = useState(false)
   const [isCheck, setIsCheck] = useState(false)
   const [selectedTopic, setSelectedTopic] = useState('')
+
+  console.log('topicData', topicData)
 
   const selectedVocabulary = useMemo(() => {
     return topicData[selectedTopic] ? shuffle(topicData[selectedTopic]) : []

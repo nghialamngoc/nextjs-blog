@@ -3,6 +3,10 @@
   transition: all 0.3s;
 }
 
+.item img {
+  max-height: 260px;
+}
+
 .item div {
   z-index: 99;
 }

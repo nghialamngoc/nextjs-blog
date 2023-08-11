@@ -43,13 +43,16 @@ export const client = async <T extends Record<string, any>>(props: ApiProps) => 
     if (isLocalFile) {
       if (isFolder) {
         data = {}
-        await readdirSync('data/' + endPoint).forEach(async (file) => {
+        const files = await readdirSync('data/' + endPoint)
+
+        for (let index = 0; index < files.length; index++) {
+          const file = files[index]
           if (file) {
             const topic = file.split('.')[0]
             const fileData = await readJson('data/' + endPoint + '/' + file)
             data[topic] = fileData
           }
-        })
+        }
       } else {
         data = await readJson('data/' + endPoint)
       }
