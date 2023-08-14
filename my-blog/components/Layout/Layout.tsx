@@ -1,7 +1,7 @@
 import { FC, ReactNode, useEffect, useState } from 'react'
 import { useDarkMode } from '@/hooks/dark-mode/use-dark-mode'
 import Container, { ContainerProps } from '@/ui/atoms/Container'
-import BlogProcessing from '@/ui/atoms/BlogProcessing'
+// import BlogProcessing from '@/ui/atoms/BlogProcessing'
 import SelectFontSize from '@/ui/molecules/SelectFontSize'
 import DarkModeToggle from '@/ui/molecules/DarkModeToggle'
 import { FONT_SIZE_OPTIONS, FONT_SIZE_STORE_NAME } from '@/config/common'
@@ -15,7 +15,7 @@ export interface LayoutProps {
 }
 
 export const Layout: FC<LayoutProps> = (props) => {
-  const { children, withFontSelection, withBlogProcessing, withDarkModeToggle, containerSize } = props
+  const { children, withFontSelection, containerSize } = props
 
   const [activeIndex, setActiveIndex] = useState(0)
 
@@ -40,7 +40,7 @@ export const Layout: FC<LayoutProps> = (props) => {
       }}
     >
       <div className="sticky">
-        {withBlogProcessing && <BlogProcessing />}
+        {/* {withBlogProcessing && <BlogProcessing />} */}
         <div className="d-flex mb-16 pb-16 align-center justify-end pr-16">
           <div className="d-flex align-center gap-16">
             {withFontSelection && (

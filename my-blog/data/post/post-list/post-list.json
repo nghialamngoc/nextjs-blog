@@ -3,8 +3,8 @@
     "uid": 1,
     "title": "Title 2",
     "description": "Description 1",
-    "slug": "slug 1",
-    "category": ["1", "2"],
+    "slug": "4-cap-do-ky-luat-ban-than",
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -12,7 +12,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -20,7 +20,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -28,7 +28,7 @@
     "title": "Title 2",
     "description": "Description 1",
     "slug": "slug 1",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -36,7 +36,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -44,7 +44,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -52,7 +52,7 @@
     "title": "Title 2",
     "description": "Description 1",
     "slug": "slug 1",
-    "category": ["1", "2"],
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -60,7 +60,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -68,7 +68,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -76,7 +76,7 @@
     "title": "Title 2",
     "description": "Description 1",
     "slug": "slug 1",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -84,7 +84,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["javascript", "2"],
     "createDate": 1686577830
   },
   {
@@ -92,7 +92,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["reactjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -100,7 +100,7 @@
     "title": "Title 2",
     "description": "Description 1",
     "slug": "slug 1",
-    "category": ["1", "2"],
+    "categories": ["reactjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -108,7 +108,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -116,7 +116,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["reactjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -124,7 +124,7 @@
     "title": "Title 2",
     "description": "Description 1",
     "slug": "slug 1",
-    "category": ["1", "2"],
+    "categories": ["nextjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -132,7 +132,7 @@
     "title": "Title 2",
     "description": "Description 2",
     "slug": "slug 2",
-    "category": ["1", "2"],
+    "categories": ["reactjs", "2"],
     "createDate": 1686577830
   },
   {
@@ -140,7 +140,7 @@
     "title": "Title 3",
     "description": "Description 3",
     "slug": "slug 3",
-    "category": ["1", "2"],
+    "categories": ["reactjs", "2"],
     "createDate": 1686577830
   }
 ]

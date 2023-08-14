@@ -7,7 +7,7 @@ const CACHE_KEY = '_post_list'
 export const getPostList = async (locale: string = DEFAULT_LOCALE) => {
   try {
     const response = await client({
-      endPoint: 'post-list.json',
+      endPoint: 'post/post-list/post-list.json',
       cacheKey: locale + CACHE_KEY,
       isLocalFile: true,
     })

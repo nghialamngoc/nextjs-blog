@@ -1,38 +1,10 @@
-.thumnail {
-  background-image: linear-gradient(
-    to right,
-    #fefad7,
-    #ffe1c1,
-    #ffc7c3,
-    #ffb4dc,
-    #caaff9
-  );
-  width: 100%;
-  height: 200px;
-  border-radius: 8px;
-  margin-bottom: 8px;
-  padding: 32px 16px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  flex-direction: column;
+.item:hover {
+  box-shadow: 0px 0.8px 2px rgba(0, 0, 0, 0.032),
+    0px 2.7px 6.7px rgba(0, 0, 0, 0.048), 0px 12px 30px rgba(0, 0, 0, 0.08);
 }
 
-.thumnail-title {
-  background-color: rgb(240 214 177 / 50%);
-  text-transform: capitalize;
-  padding: 4px 8px;
-  border-radius: 8px;
-  text-align: center;
-  width: fit-content;
-  height: fit-content;
-  font-weight: bold;
-  line-height: 150%;
-  overflow: hidden;
-  display: -webkit-box;
-  -webkit-line-clamp: 3; /* number of lines to show */
-  line-clamp: 3;
-  -webkit-box-orient: vertical;
+.item img {
+  object-fit: contain;
 }
 
 .title {
@@ -41,6 +13,5 @@
   -webkit-line-clamp: 3; /* number of lines to show */
   line-clamp: 3;
   -webkit-box-orient: vertical;
-  height: 54px;
   text-transform: capitalize;
 }

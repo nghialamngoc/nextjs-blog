@@ -1,4 +1,4 @@
-@each $value in none, flex, grid, block {
+@each $value in none, flex, grid, block, inline, inline-block {
   .d-$(value) {
     display: $(value);
   }
@@ -6,7 +6,7 @@
 
 @each $screen in xs, sm, md, lg, xl {
   @mixin media $screen {
-    @each $value in none, flex, grid, block {
+    @each $value in none, flex, grid, block, inline, inline-block {
       .d-$(screen)-$(value) {
         display: $(value);
       }

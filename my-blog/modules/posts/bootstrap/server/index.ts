@@ -1,6 +1,6 @@
 import { DEFAULT_LOCALE } from '@/config/common'
 import { ModuleAtom } from '@/hooks/module'
-import { PostIdsMapping } from '@/post-files'
+import { PostIdsMapping } from '@/data/post/post-files'
 import { getPostList } from '@/services/server-side/post-list'
 import { readFileMarkdown } from '@/utils/read-file-mardown'
 import { error } from '@/utils/safety-log'
@@ -17,7 +17,7 @@ const handler = (props: ModuleAtom) => {
       const postPathName = PostIdsMapping[postSlug]
 
       if (postPathName) {
-        const fullPath = path.join(process.cwd(), '/post-files/', postPathName)
+        const fullPath = path.join(process.cwd(), '/data/post/post-files/', postPathName)
         try {
           const fileData = await readFileMarkdown(fullPath)
 
