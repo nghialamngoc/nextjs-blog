@@ -5,7 +5,7 @@ export enum PostType {
 }
 
 export const PostIdsMapping: Record<string, string> = {
-  '4-cap-do-ky-luat-ban-than': '1.mdx',
+  forwardRef: 'forwardRef.mdx',
 }
 
 export const itemPerPage = 20

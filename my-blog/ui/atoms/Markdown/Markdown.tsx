@@ -1,5 +1,5 @@
 import { cx } from '@/utils/cx'
-import dynamic from 'next/dynamic'
+// import dynamic from 'next/dynamic'
 import { MDXRemote, MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { forwardRef, HTMLAttributes } from 'react'
 import MarkdownCode from './MarkdownCode'
@@ -11,12 +11,17 @@ import MarkdownSandbox from './MarkdownSandbox'
 
 import styles from './Markdown.module.css'
 
+const Divider = () => {
+  return <hr className="mt-32 mb-32"></hr>
+}
+
 // const remarkPlugins: Options['remarkPlugins'] = [RemarkGfm, RemarkBreaks]
 // const rehypePlugins: Options['rehypePlugins'] = [RehypeRaw]
 
 export const MDXComponents = {
   MarkdownCode,
   MarkdownSandbox,
+  Divider,
 }
 
 export interface MarkdownProps extends Omit<HTMLAttributes<HTMLDivElement>, 'color'> {

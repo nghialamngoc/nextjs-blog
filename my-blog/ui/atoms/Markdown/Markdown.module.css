@@ -7,7 +7,7 @@
 }
 
 .root > div {
-  margin: 0 0 16px 0;
+  margin-bottom: 16px;
 }
 
 .root hr {

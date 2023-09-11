@@ -1,0 +1,243 @@
+---
+id: 1
+title: forwardRef
+description: forwardRef lets your component expose a DOM node to parent component with a ref.
+categories: ['ReactJs']
+createDate: 1694333534561
+onThisPage: [
+              {
+                label: 'Reference',
+                id: '#reference',
+                children: [
+                  {
+                    label: 'forwardRef(render)',
+                    id: '#forwardref',
+                  },
+                  {
+                    label: 'render function',
+                    id: '#render-function',
+                  }
+                ],
+              },
+              {
+                label: 'Usage',
+                id: '#usage',
+                children: [
+                  {
+                    label: 'Exposing a DOM node to the parent component',
+                    id: '#exposing-a-dom-node-to-the-parent-component',
+                  },
+                  {
+                    label: 'Forwarding a ref through multiple components',
+                    id: '#forwarding-a-ref-through-multiple-components',
+                  },
+                  {
+                    label: 'Exposing an imperative handle instead of a DOM node',
+                    id: '#exposing-an-imperative-handle-instead-of-a-dom-node',
+                  }
+                ],
+              },
+            ]
+---
+
+<h1 id="reference">Reference</h1>
+
+<div className="size-18 weight-medium" id="forwardref">forwardRef(render)</div>
+
+Call forwardRef() to let your component receive a ref and forward it to a child component:
+
+<MarkdownCode>
+{`
+import { forwardRef } from 'react';
+
+const MyInput = forwardRef(function MyInput(props, ref) {
+  // ...
+});
+`}
+</MarkdownCode>
+
+<h4>Parameters</h4>
+
+```render```: The render function for your component. React calls this function with the props and ref that your component received from its parent. The JSX you return will be the output of your component.
+
+<h4>Returns</h4>
+
+forwardRef returns a React component that you can render in JSX. Unlike React components defined as plain functions, a component returned by forwardRef is also able to receive a ref prop.
+
+<Divider/>
+
+<div className="size-18 weight-medium" id="render-function">render function</div>
+
+forwardRef accepts a render function as an argument. React calls this function with props and ref:
+
+<MarkdownCode>
+{`
+const MyInput = forwardRef(function MyInput(props, ref) {
+  return (
+    <label>
+      {props.label}
+      <input ref={ref} />
+    </label>
+  );
+});
+`}
+</MarkdownCode>
+
+<div className="size-18 weight-medium">Parameters</div>
+
+- props: The props passed by the parent component.
+
+- ref:  The ref attribute passed by the parent component. The ref can be an object or a function. If the parent component has not passed a ref, it will be null. You should either pass the ref you receive to another component, or pass it to useImperativeHandle.
+
+<Divider/>
+
+<h1 id="usage">Usage</h1>
+
+<div className="size-18 weight-medium mt-32" id="exposing-a-dom-node-to-the-parent-component">Exposing a DOM node to the parent component</div>
+
+By default, each component’s DOM nodes are private. However, sometimes it’s useful to expose a DOM node to the parent—for example, to allow focusing it. To opt in, wrap your component definition into forwardRef():
+
+<MarkdownCode>
+{`
+import { forwardRef } from 'react';
+
+const MyInput = forwardRef(function MyInput(props, ref) {
+  const { label, ...otherProps } = props;
+  return (
+    <label>
+      {label}
+      <input {...otherProps} />
+    </label>
+  );
+});
+`}
+</MarkdownCode>
+
+You will receive a ref as the second argument after props. Pass it to the DOM node that you want to expose:
+
+<MarkdownCode>
+{`
+import { forwardRef } from 'react';
+
+const MyInput = forwardRef(function MyInput(props, ref) {
+  const { label, ...otherProps } = props;
+  return (
+    <label>
+      {label}
+      <input {...otherProps} ref={ref} />
+    </label>
+  );
+});
+`}
+</MarkdownCode>
+
+This lets the parent Form component access the ```<input>``` DOM node exposed by MyInput:
+
+<MarkdownCode>
+{`
+function Form() {
+  const ref = useRef(null);
+
+  function handleClick() {
+    ref.current.focus();
+  }
+
+  return (
+    <form>
+      <MyInput label="Enter your name:" ref={ref} />
+      <button type="button" onClick={handleClick}>
+        Edit
+      </button>
+    </form>
+  );
+}
+`}
+</MarkdownCode>
+
+<Divider/>
+
+<div className="size-18 weight-medium" id="forwarding-a-ref-through-multiple-components">Forwarding a ref through multiple components</div>
+
+Instead of forwarding a ref to a DOM node, you can forward it to your own component like MyInput:
+
+<MarkdownCode>
+{`
+const FormField = forwardRef(function FormField(props, ref) {
+  // ...
+  return (
+    <>
+      <MyInput ref={ref} />
+      ...
+    </>
+  );
+});
+`}
+</MarkdownCode>
+
+If that MyInput component forwards a ref to its ```<input>```, a ref to FormField will give you that ```<input>```:
+
+<MarkdownCode>
+{`
+function Form() {
+  const ref = useRef(null);
+
+  function handleClick() {
+    ref.current.focus();
+  }
+
+  return (
+    <form>
+      <FormField label="Enter your name:" ref={ref} isRequired={true} />
+      <button type="button" onClick={handleClick}>
+        Edit
+      </button>
+    </form>
+  );
+}
+`}
+</MarkdownCode>
+
+<Divider/>
+
+<div className="size-18 weight-medium" id="exposing-an-imperative-handle-instead-of-a-dom-node">Exposing an imperative handle instead of a DOM node</div>
+
+Instead of exposing an entire DOM node, you can expose a custom object, called an imperative handle, with a more constrained set of methods. To do this, you’d need to define a separate ref to hold the DOM node:
+
+<MarkdownCode>
+{`
+const MyInput = forwardRef(function MyInput(props, ref) {
+  const inputRef = useRef(null);
+
+  // ...
+
+  return <input {...props} ref={inputRef} />;
+});
+`}
+</MarkdownCode>
+
+Pass the ref you received to useImperativeHandle and specify the value you want to expose to the ref:
+
+<MarkdownCode>
+{`
+import { forwardRef, useRef, useImperativeHandle } from 'react';
+
+const MyInput = forwardRef(function MyInput(props, ref) {
+  const inputRef = useRef(null);
+
+  useImperativeHandle(ref, () => {
+    return {
+      focus() {
+        inputRef.current.focus();
+      },
+      scrollIntoView() {
+        inputRef.current.scrollIntoView();
+      },
+    };
+  }, []);
+
+  return <input {...props} ref={inputRef} />;
+});
+`}
+</MarkdownCode>
+
+If some component gets a ref to MyInput, it will only receive your ```{ focus, scrollIntoView }``` object instead of the DOM node. This lets you limit the information you expose about your DOM node to the minimum.
