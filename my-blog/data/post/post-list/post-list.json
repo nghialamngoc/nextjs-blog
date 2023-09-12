@@ -4,7 +4,15 @@
     "title": "forwardRef",
     "description": "forwardRef lets your component expose a DOM node to parent component with a ref.",
     "slug": "forwardRef",
-    "categories": ["reactjs", "2"],
+    "categories": ["reactjs"],
     "createDate": 1694333534561
+  },
+  {
+    "uid": 2,
+    "title": "lazy",
+    "description": "lazy lets you defer loading component’s code until it is rendered for the first time.",
+    "slug": "react-lazy",
+    "categories": ["reactjs"],
+    "createDate": 1694435824965
   }
 ]

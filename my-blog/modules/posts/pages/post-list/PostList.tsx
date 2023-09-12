@@ -98,8 +98,8 @@ export const PostList: FC<PostListProps> = ({ postList }) => {
             >
               <div>{getThumbIcon(x?.categories?.[0])}</div>
               <div>
-                <div className={cx(styles.title, 'size-18 weight-medium lh-150 color-text')}>{x.title}</div>
-                <div className="mb-4">{x.description}</div>
+                <div className={cx(styles.title, 'size-26 weight-bold lh-150 color-text mb-4')}>{x.title}</div>
+                <div className="mb-6">{x.description}</div>
                 <div className="size-12">{formatDate(x.createDate)}</div>
               </div>
             </article>

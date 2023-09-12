@@ -1,0 +1,84 @@
+---
+id: 1
+title: lazy
+description: lazy lets you defer loading component’s code until it is rendered for the first time..
+categories: ['ReactJs']
+createDate: 1694435824965
+onThisPage: [
+              {
+                label: 'Reference',
+                id: '#reference',
+                children: [
+                  {
+                    label: 'lazy(load)',
+                    id: '#lazy',
+                  }
+                ],
+              },
+              {
+                label: 'Usage',
+                id: '#usage',
+                children: [
+                  {
+                    label: 'Lazy-loading components with Suspense',
+                    id: '#suspense-for-code-splitting',
+                  },
+                ],
+              },
+            ]
+---
+
+<h1 id="reference">Reference</h1>
+
+<div className="size-18 weight-medium" id="lazy">lazy(load)</div>
+
+Call lazy outside your components to declare a lazy-loaded React component:
+
+<MarkdownCode>
+{`
+import { lazy } from 'react';
+
+const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
+`}
+</MarkdownCode>
+
+<h4>Parameters</h4>
+
+```load```: A function that returns a Promise or another thenable (a Promise-like object with a then method). React will not call load until the first time you attempt to render the returned component. After React first calls load, it will wait for it to resolve, and then render the resolved value’s .default as a React component. Both the returned Promise and the Promise’s resolved value will be cached, so React will not call load more than once. If the Promise rejects, React will throw the rejection reason for the nearest Error Boundary to handle. The JSX you return will be the output of your component.
+
+<h4>Returns</h4>
+
+```lazy``` returns a React component you can render in your tree. While the code for the lazy component is still loading, attempting to render it will suspend. Use ```<Suspense>``` to display a loading indicator while it’s loading.
+
+<Divider/>
+
+<h1 id="usage">Usage</h1>
+
+<div className="size-18 weight-medium mt-32" id="suspense-for-code-splitting">Lazy-loading components with Suspense </div>
+
+Usually, you import components with the static import declaration:
+
+<MarkdownCode>
+{`
+import MarkdownPreview from './MarkdownPreview.js';
+`}
+</MarkdownCode>
+
+To defer loading this component’s code until it’s rendered for the first time, replace this import with:
+
+<MarkdownCode>
+{`
+import { lazy } from 'react';
+
+const MarkdownPreview = lazy(() => import('./MarkdownPreview.js'));
+`}
+</MarkdownCode>
+
+<MarkdownCode>
+{`
+<Suspense fallback={<Loading />}>
+  <h2>Preview</h2>
+  <MarkdownPreview />
+ </Suspense>
+`}
+</MarkdownCode>

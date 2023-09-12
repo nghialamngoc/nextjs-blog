@@ -6,6 +6,7 @@ export enum PostType {
 
 export const PostIdsMapping: Record<string, string> = {
   forwardRef: 'forwardRef.mdx',
+  'react-lazy': 'react-lazy.mdx',
 }
 
 export const itemPerPage = 20

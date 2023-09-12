@@ -30,7 +30,7 @@ export const OnThisPageLink: FC<OnThisPageLink> = ({ anchorId, setAnchorId, labe
       {children &&
         children.map((x, index) => {
           return (
-            <div className="pl-8" key={index}>
+            <div className="pl-16" key={index}>
               <OnThisPageLink {...x} anchorId={anchorId} setAnchorId={setAnchorId} />
             </div>
           )

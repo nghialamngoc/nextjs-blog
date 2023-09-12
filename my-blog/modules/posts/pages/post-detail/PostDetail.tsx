@@ -1,6 +1,7 @@
 import Markdown from '@/ui/atoms/Markdown'
 import TextDivider from '@/ui/atoms/TextDivider'
 import OnThisPage, { OnThisPageLink } from '@/ui/molecules/OnThisPage'
+import { formatDate } from '@/utils/date'
 import { MDXRemoteSerializeResult } from 'next-mdx-remote'
 import { FC, useEffect, useState } from 'react'
 import styles from './PostDetail.module.css'
@@ -28,7 +29,7 @@ export const PostDetail: FC<PostDetailProps> = (props) => {
     <div className="pb-40" id="post-detail">
       <div className="d-flex justify-between mb-16">
         <span className="size-08-em">{categories.join(', ')}</span>
-        <div className="size-08-em">{createDate}</div>
+        <div className="size-08-em">{formatDate(Number(createDate))}</div>
       </div>
       <div className="size-32 mb-32 weight-medium">{title}</div>
       <div className="mb-32">
