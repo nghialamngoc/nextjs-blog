@@ -14,5 +14,13 @@
     "slug": "react-lazy",
     "categories": ["reactjs"],
     "createDate": 1694435824965
+  },
+  {
+    "uid": 3,
+    "title": "React memo",
+    "description": "memo lets you skip re-rendering a component when its props are unchanged.",
+    "slug": "react-memo",
+    "categories": ["reactjs"],
+    "createDate": 1694507511313
   }
 ]
