@@ -1,7 +1,7 @@
 ---
 id: 1
 title: React memo
-description: memo lets you skip re-rendering a component when its props are unchanged..
+description: memo lets you skip re-rendering a component when its props are unchanged.
 categories: ['ReactJs']
 createDate: 1694507511313
 onThisPage: [
@@ -50,7 +50,7 @@ const SomeComponent = memo(function SomeComponent(props) {
 
 <h4>Parameters</h4>
 
-- ```Component```: he component that you want to memoize. The memo does not modify this component, but returns a new, memoized component instead. Any valid React component, including functions and forwardRef components, is accepted.
+- ```Component```: The component that you want to memoize. The memo does not modify this component, but returns a new, memoized component instead. Any valid React component, including functions and forwardRef components, is accepted.
 
 - optional ```arePropsEqual```: A function that accepts two arguments: the component’s previous props, and its new props. It should return true if the old and new props are equal: that is, if the component will render the same output and behave in the same way with the new props as with the old. Otherwise it should return false. Usually, you will not specify this function. By default, React will compare each prop with [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is).
 

@@ -8,6 +8,7 @@ export const PostIdsMapping: Record<string, string> = {
   forwardRef: 'forwardRef.mdx',
   'react-lazy': 'react-lazy.mdx',
   'react-memo': 'react-memo.mdx',
+  'react-startTransition': 'react-startTransition.mdx',
 }
 
 export const itemPerPage = 20

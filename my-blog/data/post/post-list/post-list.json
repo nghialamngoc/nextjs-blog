@@ -22,5 +22,13 @@
     "slug": "react-memo",
     "categories": ["reactjs"],
     "createDate": 1694507511313
+  },
+  {
+    "uid": 4,
+    "title": "React startTransition",
+    "description": "startTransition lets you update the state without blocking the UI.",
+    "slug": "react-startTransition",
+    "categories": ["reactjs"],
+    "createDate": 1694837707874
   }
 ]
